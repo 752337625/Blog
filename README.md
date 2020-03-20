@@ -16,3 +16,5 @@ blog系统
 克隆github仓库,之后npn install 下载package.json里面的包
 #	 git push -f origin master
 远程仓库和本地不一样是 -f 强制更新本地到远程
+# git pull -f origin master
+拉取远程修改代码到本地
