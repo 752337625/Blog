@@ -18,3 +18,7 @@ blog系统
 远程仓库和本地不一样是 -f 强制更新本地到远程
 # git pull -f origin master
 拉取远程修改代码到本地
+# git cheakout -b login
+创建并切换分支
+# git branch
+查看有哪些分支,以及所处的分支(带*好)

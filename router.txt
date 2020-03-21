@@ -1,0 +1,6 @@
+new VueRouter({
+	routes:[
+		{path:'/',redirect:'/login'},
+		{path:'/',component:'Longin'}
+	]
+})
