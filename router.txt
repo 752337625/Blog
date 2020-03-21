@@ -4,3 +4,20 @@ new VueRouter({
 		{path:'/',component:'Longin'}
 	]
 })
+//路由跳转
+this.$router.push('/Home')
+//路由导航守卫控制访问权限(注意:使用方式是在router对象之后,使用router对象去beforeEach)
+const router = new VueRouter({
+    routes
+})
+router.beforeEach((to, from, next) => {
+    if (to.path === '/Login') return next()
+    const tokenStr = window.sessionStorage.getItem('token')
+    if (!tokenStr) return next('/Login')
+    next()
+})
+logout() {
+      window.sessionStorage.clear;
+      this.$router.push("/login");
+},
+
