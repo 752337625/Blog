@@ -99,10 +99,11 @@ export default {
 .loginConainer {
     width: 100%;
     height: 100%;
-    background-image: url(../assets/img/banner.jpg);
+    background-image: url(../assets/img/login.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-clip: border-box;
+    font-size: 0.2rem;
 }
 
 .loginbox {
@@ -110,7 +111,7 @@ export default {
 }
 
 .loginboxItem {
-    height: 17rem;
+       height: 3rem;
     background: white;
     position: absolute;
     top: 50%;
@@ -123,6 +124,8 @@ export default {
 h1 {
     text-align: center;
     color: #409EFF;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
 }
 
 .buttonPosition {
