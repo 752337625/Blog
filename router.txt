@@ -20,4 +20,63 @@ logout() {
       window.sessionStorage.clear;
       this.$router.push("/login");
 },
+子路由规则
+{
+        path: '/home',
+        name: 'Home',
+        redirect: '/welcome',
+        component: () =>
+            import ('../views/Home'),
+        children: [{
+                path: '/welcome',
+                component: () =>
+                    import ('../components/Welcome')
+            },
+            {
+                path: '/users',
+                component: () =>
+                    import ('../components/users/Users')
+            },
+            {
+                path: '/rights',
+                component: () =>
+                    import ('../components/power/Rights')
+            },
+            {
+                path: '/roles',
+                component: () =>
+                    import ('../components/power/Roles')
+            },
+            {
+                path: '/categories',
+                component: () =>
+                    import ('../components/goods/Cate.vue')
+            },
+            {
+                path: '/params',
+                component: () =>
+                    import ('../components/goods/Params.vue')
+            },
+            {
+                path: '/goods',
+                component: () =>
+                    import ('../components/goods/List.vue')
+            },
+            {
+                path: '/goods/add',
+                component: () =>
+                    import ('../components/goods/Add.vue')
+            },
+            {
+                path: '/orders',
+                component: () =>
+                    import ('../components/order/Order.vue')
+            },
+            {
+                path: '/reports',
+                component: () =>
+                    import ('../components/report/Report.vue')
+            }
+        ],
+    },
 

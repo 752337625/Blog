@@ -103,7 +103,7 @@ export default {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-clip: border-box;
-    font-size: 0.2rem;
+        font-size: 1rem;
 }
 
 .loginbox {
@@ -111,7 +111,7 @@ export default {
 }
 
 .loginboxItem {
-       height: 3rem;
+        height: 17rem;
     background: white;
     position: absolute;
     top: 50%;

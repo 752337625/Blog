@@ -6,18 +6,16 @@
         </el-header>
         <el-container>
             <el-row type="flex" class="asideConainer">
-                 <el-col  :lg="3" :xl="4" class="hidden-md-and-down aside-left">
+                 <el-col  :lg="4" :xl="4" class="hidden-md-and-down aside-left">
                     <el-aside class="homeAside" style="width: auto;">
                         <blog-aside></blog-aside>
                     </el-aside>
                 </el-col>
-                <el-col :xs="24" :sm="24" :md="24" :lg="21" :xl="20">
-                    <el-container>
+                <el-col :xs="24" :sm="24" :md="24" :lg="20" :xl="20">
                         <el-main class="homeMain">
-                             <blog-main></blog-main>
+                            <router-view></router-view>
+                             <!-- <blog-main></blog-main> -->
                         </el-main>
-                        <!-- <el-footer style="background-color: #b3c0d1;"></el-footer> -->
-                    </el-container>
                 </el-col>
             </el-row>
         </el-container>
@@ -28,7 +26,7 @@
 <script>
 import blogHeader from '../components/pc_components/blogHeader'
 import blogAside from '../components/pc_components/blogAside'
-import blogMain from '../components/pc_components/blogMain'
+//import blogMain from '../components/pc_components/blogMain'
 export default {
     data: function () {
         return {}
@@ -37,7 +35,7 @@ export default {
     components: {
         blogHeader,
         blogAside,
-        blogMain
+        //blogMain
     },
     methods: {
 
@@ -62,7 +60,7 @@ export default {
 }
 
 .homeMain {
-   
+   height: 100%;
    background-color: #ECF0F5;
 }
 .asideConainer{
