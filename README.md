@@ -18,7 +18,7 @@ blog系统
 远程仓库和本地不一样是 -f 强制更新本地到远程
 #	 git push -u origin login
 本地login分支推送到远程仓库,git add . git commit -m "login分支"  git push -u origin login
-# git pull -f origin master
+# git pull  origin master
 拉取远程修改代码到本地
 # git cheakout -b login
 创建并切换分支
