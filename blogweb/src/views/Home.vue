@@ -6,12 +6,12 @@
         </el-header>
         <el-container>
             <el-row type="flex" class="asideConainer">
-                 <el-col :md="4" :lg="4" :xl="4" :style="{width:isCollapse?'64px':''}" class="hidden-sm-and-down aside-left">
-                    <el-aside class="homeAside" style="height: 100%;width:auto;">
+                 <el-col :md="5" :lg="4" :xl="4" :style="{width:isCollapse?'64px':''}" class="hidden-sm-and-down aside-left">
+                    <el-aside class="homeAside" style="width:auto;">
                         <blog-aside :isCollapse='isCollapse'></blog-aside>
                     </el-aside>
                 </el-col>
-                <el-col :xs="24" :sm="24" :md="isCollapse?24:20" :lg="isCollapse?24:20" :xl="isCollapse?24:20">
+                <el-col :xs="24" :sm="24" :md="isCollapse?24:19" :lg="isCollapse?24:20" :xl="isCollapse?24:20">
                         <el-main class="homeMain">
                             <router-view></router-view>
                              <!-- <blog-main></blog-main> -->
@@ -49,9 +49,8 @@ export default {
 
 <style lang="less" scoped>
 .homeConainer {
-    height: 100%;
+    //height: 100%;
     width: 100%;
-    background-color: white;
 }
 
 .homeHeader {
@@ -64,7 +63,8 @@ export default {
 }
 
 .homeMain {
-   height: 100%;
+  // height: 100%;
+    min-height: 100%;
    background-color: #ECF0F5;
 }
 .asideConainer{
@@ -72,6 +72,7 @@ export default {
 }
 .aside-left{
     background-color:#263238;
-    height: 100%;
+     height: 650px;
+   // height: 100%;
 }
 </style>

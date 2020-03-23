@@ -1,6 +1,6 @@
 <template>
 <div class="blogAsideConainer">
-    <el-menu default-active="1" :collapse-transition="false" @open="handleOpen" @close="handleClose" :unique-opened="true" :collapse="isCollapse" background-color="#263238" text-color="#fff" active-text-color="#ffd04b" style="border: 0;">
+    <el-menu default-active="1" :collapse-transition="false"  :unique-opened="true" :collapse="isCollapse" background-color="#263238" text-color="#fff" active-text-color="#ffd04b" style="border: 0;" router>
         <el-menu-item index="1">
             <i class="el-icon-setting"></i>
             <span slot="title">仪表盘</span>
@@ -40,7 +40,7 @@
                 <i class="el-icon-document"></i>
                 <span>文章管理</span>
             </template>
-            <el-menu-item index="6-1-1">
+            <el-menu-item index="/addBlog">
                 <template>
                     <i class="el-icon-document"></i>
                     <span>新增文章</span>

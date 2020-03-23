@@ -17,7 +17,9 @@ import {
     MenuItem,
     MenuItemGroup,
     Popover,
-    Card
+    Card,
+    Breadcrumb,
+    BreadcrumbItem,
 } from 'element-ui';
 Vue.use(Button)
 Vue.use(Row)
@@ -36,4 +38,6 @@ Vue.use(MenuItem)
 Vue.use(MenuItemGroup)
 Vue.use(Popover)
 Vue.use(Card)
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
 Vue.prototype.$message = Message;

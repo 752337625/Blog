@@ -1,7 +1,7 @@
 <template>
 <div class="blogHeadConainer">
     <el-row class="navbar-header" type="flex" justify="flex-start">
-        <el-col :xs="24" :sm="24" :md="4" :lg="4" :xl="4"  :style="{width:isCollapse?'64px':''}">
+        <el-col :xs="24" :sm="24" :md="5" :lg="4" :xl="4"  :style="{width:isCollapse?'64px':''}">
             <div class="navbar-header-left">
                 <el-row type="flex" justify="flex-start">
                     <el-col :xs="21" :sm="21" :md="20" :lg="20" :xl="20" class="blogger">
@@ -12,13 +12,13 @@
                             <p>Blog</p>
                         </div>
                     </el-col>
-                    <el-col :xs="4" :sm="4" :md="4" class="hidden-md-and-up menu-icon">
+                    <el-col :xs="3" :sm="3" :md="4" class="hidden-md-and-up menu-icon">
                         <i class="iconfont iconmianbaoxie"></i>
                     </el-col>
                 </el-row>
             </div>
         </el-col>
-        <el-col :md="20" :lg="20" :xl="20"  class="hidden-sm-and-down" :style="{width:isCollapse?'100%':''}">
+        <el-col :md="19" :lg="20" :xl="20"  class="hidden-sm-and-down" :style="{width:isCollapse?'100%':''}">
             <div class="navbar-header-rigth">
                 <el-row>
                     <el-col :span="24" class="iconfontContent">

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Login from '../views/Login'
 import Home from '../views/Home'
 import Main from '../components/pc_components/blogMain'
+import BlogAdd from '../components/pc_components/pc_main_small_components/blogAdd'
 
 
 Vue.use(VueRouter)
@@ -22,6 +23,9 @@ const routes = [{
         children: [{
             path: '/Main',
             component: Main
+        }, {
+            path: '/addBlog',
+            component: BlogAdd
         }]
     }
 

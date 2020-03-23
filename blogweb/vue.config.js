@@ -3,14 +3,10 @@
 //     remUnit: 75 // 基准大小 baseSize，需要和rem.js中相同
 // })
 
-// module.exports = {
-//     css: {
-//         loaderOptions: {
-//             postcss: {
-//                 plugins: [
-//                     postcss
-//                 ]
-//             }
-//         }
-//     },
-// }
+module.exports = {
+    chainWebpack: config => {
+        // 修复HMR
+        config.resolve.symlinks(true);
+
+    },
+}
