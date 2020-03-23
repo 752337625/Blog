@@ -2,16 +2,16 @@
 <div class="homeConainer">
     <el-container style="height: 100%;">
         <el-header style="height:45px;" class="homeHeader">
-            <blog-header></blog-header>
+            <blog-header @ShowMenuListInfo="ShowMenuList"></blog-header>
         </el-header>
         <el-container>
             <el-row type="flex" class="asideConainer">
-                 <el-col  :lg="4" :xl="4" class="hidden-md-and-down aside-left">
-                    <el-aside class="homeAside" style="width: auto;">
-                        <blog-aside></blog-aside>
+                 <el-col :md="4" :lg="4" :xl="4" :style="{width:isCollapse?'64px':''}" class="hidden-sm-and-down aside-left">
+                    <el-aside class="homeAside" style="height: 100%;width:auto;">
+                        <blog-aside :isCollapse='isCollapse'></blog-aside>
                     </el-aside>
                 </el-col>
-                <el-col :xs="24" :sm="24" :md="24" :lg="20" :xl="20">
+                <el-col :xs="24" :sm="24" :md="isCollapse?24:20" :lg="isCollapse?24:20" :xl="isCollapse?24:20">
                         <el-main class="homeMain">
                             <router-view></router-view>
                              <!-- <blog-main></blog-main> -->
@@ -29,7 +29,9 @@ import blogAside from '../components/pc_components/blogAside'
 //import blogMain from '../components/pc_components/blogMain'
 export default {
     data: function () {
-        return {}
+        return {
+            isCollapse:false,
+        }
 
     },
     components: {
@@ -38,7 +40,9 @@ export default {
         //blogMain
     },
     methods: {
-
+        ShowMenuList(visible){
+            this.isCollapse=visible
+        }
     },
 };
 </script>

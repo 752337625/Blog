@@ -1,10 +1,10 @@
 <template>
 <div class="blogHeadConainer">
-    <el-row class="navbar-header">
-        <el-col :xs="24" :sm="24" :md=24 :lg="4" :xl="4">
+    <el-row class="navbar-header" type="flex" justify="flex-start">
+        <el-col :xs="24" :sm="24" :md="4" :lg="4" :xl="4"  :style="{width:isCollapse?'64px':''}">
             <div class="navbar-header-left">
                 <el-row type="flex" justify="flex-start">
-                    <el-col :xs="21" :sm="21" :md="21" :lg="20" :xl="20" class="blogger">
+                    <el-col :xs="21" :sm="21" :md="20" :lg="20" :xl="20" class="blogger">
                         <div>
                             <i class="iconfont iconblogger"></i>
                         </div>
@@ -12,18 +12,18 @@
                             <p>Blog</p>
                         </div>
                     </el-col>
-                    <el-col :xs="3" :sm="3" :md="3" class="hidden-lg-only menu-icon">
+                    <el-col :xs="4" :sm="4" :md="4" class="hidden-md-and-up menu-icon">
                         <i class="iconfont iconmianbaoxie"></i>
                     </el-col>
                 </el-row>
             </div>
         </el-col>
-        <el-col :lg="20" :xl="20" class="hidden-md-and-down">
+        <el-col :md="20" :lg="20" :xl="20"  class="hidden-sm-and-down" :style="{width:isCollapse?'100%':''}">
             <div class="navbar-header-rigth">
                 <el-row>
                     <el-col :span="24" class="iconfontContent">
                         <div class="iconfontBorder">
-                            <div>
+                            <div @click="showCard('menuListInfo')">
                                 <i class="iconfont iconmianbaoxie"></i>
                             </div>
                             <div @click="showCard('messageInfo')">
@@ -61,6 +61,7 @@ export default {
     data: function () {
         return {
             visible: false,
+            isCollapse:false,
             userInfo: {
                 name: '王宏伟',
                 age: 36,
@@ -78,6 +79,7 @@ export default {
             },
             info: '',
 
+
         }
 
     },
@@ -86,12 +88,16 @@ export default {
     },
     methods: {
         showCard(mess) {
+            if(mess=="menuListInfo"){
+                this.$emit("ShowMenuListInfo",!this.isCollapse);//自定义事件  传递值“子向父组件传值”
+                this.isCollapse=!this.isCollapse
+                return;
+            }
             this.visible = !this.visible
             this.client.clientX = event.clientX - event.offsetX + 'px'
             this.client.clientY = '50px'
             this.info = this.$data[mess]
             event.preventDefault()
-
         }
     },
 };
@@ -133,7 +139,7 @@ export default {
 
 .iconblogger {
     font-size: 1.9rem;
-    padding-right: 0.5rem;
+    padding-right: 0.6rem;
     display: block;
 
 }

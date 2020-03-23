@@ -89,9 +89,10 @@
 
 <script>
 export default {
+    props:['isCollapse'],
     data: function () {
         return {
-            isCollapse: false
+           
         }
 
     },
