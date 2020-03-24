@@ -13,3 +13,13 @@ body,
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     background-color: #ECF0F5;
 }
+.quill-editor {
+    min-height: 900px ;
+   
+  }
+  .ql-container.ql-snow{
+    min-height: 834px;
+}
+.ql-tooltip.ql-editing{
+    left: 0px!important;
+}

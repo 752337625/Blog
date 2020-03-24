@@ -2,8 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import './plugins/element.js'
-//Layout 布局隐藏
-import 'element-ui/lib/theme-chalk/display.css';
+
 //全局样式
 import './assets/css/global.css'
 //全局iconfont

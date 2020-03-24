@@ -1,9 +1,9 @@
-
-
-var date=function(param){
+var date = function (param) {
 
   return param.getFullYear();
 }
-  
 
-export {date};
+
+export {
+  date
+};

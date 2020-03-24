@@ -1,4 +1,5 @@
 import Vue from 'vue'
+
 import {
     Row,
     Col,
@@ -21,6 +22,8 @@ import {
     Breadcrumb,
     BreadcrumbItem,
 } from 'element-ui';
+//Layout 布局隐藏
+import 'element-ui/lib/theme-chalk/display.css';
 Vue.use(Button)
 Vue.use(Row)
 Vue.use(Col)
@@ -40,4 +43,5 @@ Vue.use(Popover)
 Vue.use(Card)
 Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
+
 Vue.prototype.$message = Message;
