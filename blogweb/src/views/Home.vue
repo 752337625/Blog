@@ -74,9 +74,10 @@ export default {
 }
 
 .homeMain {
-  // height: 100%;
+   height: 100%;
   //min-height: 100%;
   background-color: #ecf0f5;
+  overflow: hidden;
 }
 .asideConainer {
   width: 100%;

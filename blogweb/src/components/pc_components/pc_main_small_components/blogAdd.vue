@@ -1,9 +1,18 @@
 <template>
   <div class="mainConainer">
+    <div></div>
     <BlogBreadCrumb :BreadCrumbInfo="BreadCrumbInfo"></BlogBreadCrumb>
-
     <el-card class="box-card ql-container ql-snow">
-      <quill-editor v-model="content" :options="editorOption" ></quill-editor>
+      <el-row type="flex" justify="space-between" align="middle" style="margin-bottom: 10px;">
+        <div>
+         <h2>欢迎使用CSDN-markdown编辑器</h2>
+        </div>
+        <div>
+          <el-button type="primary" size="small">保存草稿</el-button>
+          <el-button type="primary" size="small">发布文章</el-button>
+        </div>
+      </el-row>
+      <quill-editor v-model="content" :options="editorOption"></quill-editor>
     </el-card>
   </div>
 </template>
@@ -16,9 +25,7 @@ export default {
   data: function() {
     return {
       content: "",
-      editorOption: {
-        
-      },
+      editorOption: {},
       BreadCrumbInfo: {
         Home: "首页",
         LevelOneMenu: "文章管理",
@@ -38,6 +45,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
-
+.box-card {
+  height: 627px;
+}
+.mainConainer {
+  height: 100%;
+}
 </style>

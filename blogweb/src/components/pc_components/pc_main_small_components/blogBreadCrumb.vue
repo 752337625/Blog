@@ -1,5 +1,5 @@
 <template>
-  <div class="mainConainer">
+  <div class="">
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/Main' }">{{BreadCrumbInfo.Home}}</el-breadcrumb-item>
       <el-breadcrumb-item>{{BreadCrumbInfo.LevelOneMenu}}</el-breadcrumb-item>

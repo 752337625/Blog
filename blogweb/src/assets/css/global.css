@@ -14,12 +14,10 @@ body,
     background-color: #ECF0F5;
 }
 .quill-editor {
-    min-height: 900px ;
-   
+    /* height: 627px; */
+    height: 500px;
   }
-  .ql-container.ql-snow{
-    min-height: 834px;
-}
+
 .ql-tooltip.ql-editing{
     left: 0px!important;
 }
