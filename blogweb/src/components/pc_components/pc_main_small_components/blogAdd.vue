@@ -5,7 +5,7 @@
     <el-card class="box-card ql-container ql-snow">
       <el-row type="flex" justify="space-between" align="middle" style="margin-bottom: 10px;">
         <div>
-         <h2>欢迎使用CSDN-markdown编辑器</h2>
+         <h2>欢迎使用我的</h2>
         </div>
         <div>
           <el-button type="primary" size="small">保存草稿</el-button>
