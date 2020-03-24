@@ -21,6 +21,9 @@ import {
     Card,
     Breadcrumb,
     BreadcrumbItem,
+    Table,
+    TableColumn,
+    Pagination,
 } from 'element-ui';
 //Layout 布局隐藏
 import 'element-ui/lib/theme-chalk/display.css';
@@ -43,5 +46,7 @@ Vue.use(Popover)
 Vue.use(Card)
 Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
-
+Vue.use(Table)
+Vue.use(TableColumn)
+Vue.use(Pagination)
 Vue.prototype.$message = Message;

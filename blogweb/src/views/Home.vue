@@ -7,9 +7,9 @@
       <el-container>
         <el-row type="flex" class="asideConainer">
           <el-col
-            :md="5"
-            :lg="4"
-            :xl="4"
+            :md="4"
+            :lg="3"
+            :xl="3"
             :style="{width:isCollapse?'64px':''}"
             class="hidden-sm-and-down aside-left"
           >
@@ -20,9 +20,9 @@
           <el-col
             :xs="24"
             :sm="24"
-            :md="isCollapse?24:19"
-            :lg="isCollapse?24:20"
-            :xl="isCollapse?24:20"
+            :md="isCollapse?24:20"
+            :lg="isCollapse?24:21"
+            :xl="isCollapse?24:21"
           >
             <el-main class="homeMain">
               <router-view></router-view>

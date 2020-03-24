@@ -1,7 +1,7 @@
 <template>
   <div class="blogHeadConainer">
     <el-row class="navbar-header" type="flex" justify="flex-start">
-      <el-col :xs="24" :sm="24" :md="5" :lg="4" :xl="4" :style="{width:isCollapse?'64px':''}">
+      <el-col :xs="24" :sm="24" :md="4" :lg="3" :xl="3" :style="{width:isCollapse?'64px':''}">
         <div class="navbar-header-left">
           <el-row type="flex" justify="flex-start">
             <el-col :xs="21" :sm="21" :md="20" :lg="20" :xl="20" class="blogger">
@@ -19,9 +19,9 @@
         </div>
       </el-col>
       <el-col
-        :md="19"
-        :lg="20"
-        :xl="20"
+        :md="20"
+        :lg="21"
+        :xl="21"
         class="hidden-sm-and-down"
         :style="{width:isCollapse?'100%':''}"
       >

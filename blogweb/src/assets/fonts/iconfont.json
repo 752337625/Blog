@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "7827613",
+      "name": "仪表盘",
+      "font_class": "yibiaopan",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
       "icon_id": "6802022",
       "name": "Female-User",
       "font_class": "Female-User",

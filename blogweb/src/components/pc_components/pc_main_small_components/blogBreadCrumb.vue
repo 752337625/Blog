@@ -1,9 +1,9 @@
 <template>
   <div class="">
     <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item :to="{ path: '/Main' }">{{BreadCrumbInfo.Home}}</el-breadcrumb-item>
-      <el-breadcrumb-item>{{BreadCrumbInfo.LevelOneMenu}}</el-breadcrumb-item>
-      <el-breadcrumb-item>{{BreadCrumbInfo.LevelTwoMenu}}</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/odometer' }">{{BreadCrumbInfo.Home}}</el-breadcrumb-item>
+      <el-breadcrumb-item v-if="BreadCrumbInfo.LevelOneMenu">{{BreadCrumbInfo.LevelOneMenu}}</el-breadcrumb-item>
+      <el-breadcrumb-item v-if="BreadCrumbInfo.LevelOneMenu">{{BreadCrumbInfo.LevelTwoMenu}}</el-breadcrumb-item>
     </el-breadcrumb>
   </div>
 </template>

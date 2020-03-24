@@ -19,7 +19,6 @@ import axios from './assets/js/axios'
 // //自定义事件时间modul
 // import{date} from './assets/js/date'
 // Vue.prototype.$date = date
-
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false

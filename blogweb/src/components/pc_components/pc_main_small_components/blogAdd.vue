@@ -1,6 +1,6 @@
 <template>
   <div class="mainConainer">
-    <div></div>
+
     <BlogBreadCrumb :BreadCrumbInfo="BreadCrumbInfo"></BlogBreadCrumb>
     <el-card class="box-card ql-container ql-snow">
       <el-row type="flex" justify="space-between" align="middle" style="margin-bottom: 10px;">

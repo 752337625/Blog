@@ -11,8 +11,8 @@
       style="border: 0;"
       router
     >
-      <el-menu-item index="1">
-        <i class="el-icon-setting"></i>
+      <el-menu-item index="/odometer">
+        <i class="el-icon-odometer"></i>
         <span slot="title">仪表盘</span>
       </el-menu-item>
       <el-menu-item index="2">
@@ -56,34 +56,10 @@
             <span>新增文章</span>
           </template>
         </el-menu-item>
-        <el-menu-item index="6-1-2">
+        <el-menu-item index="/listOperationBlog">
           <template>
             <i class="el-icon-document"></i>
-            <span>查看文章</span>
-          </template>
-        </el-menu-item>
-          <el-menu-item index="6-1-2">
-          <template>
-            <i class="el-icon-document"></i>
-            <span>查看文章</span>
-          </template>
-        </el-menu-item>
-          <el-menu-item index="6-1-2">
-          <template>
-            <i class="el-icon-document"></i>
-            <span>查看文章</span>
-          </template>
-        </el-menu-item>
-          <el-menu-item index="6-1-2">
-          <template>
-            <i class="el-icon-document"></i>
-            <span>查看文章</span>
-          </template>
-        </el-menu-item>
-          <el-menu-item index="6-1-2">
-          <template>
-            <i class="el-icon-document"></i>
-            <span>查看文章</span>
+            <span>文章列表</span>
           </template>
         </el-menu-item>
       </el-submenu>
