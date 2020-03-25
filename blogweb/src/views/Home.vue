@@ -1,41 +1,27 @@
 <template>
-  <div class="homeConainer">
-    <el-container style>
-      <el-header style="height:45px;" class="homeHeader">
-        <blog-header @ShowMenuListInfo="ShowMenuList"></blog-header>
-      </el-header>
-      <el-container class="containerHeigth">
-        <el-row type="flex" class="asideConainer">
-          <el-col
-            :md="4"
-            :lg="3"
-            :xl="3"
-            :style="{width:isCollapse?'64px':''}"
-            class="hidden-sm-and-down aside-left"
-          >
-            <el-aside class="homeAside" style="width:auto;overflow: hidden;">
-              <blog-aside :isCollapse="isCollapse"></blog-aside>
-            </el-aside>
-          </el-col>
-          <el-col
-            :xs="24"
-            :sm="24"
-            :md="isCollapse?24:20"
-            :lg="isCollapse?24:21"
-            :xl="isCollapse?24:21"
-          >
-            <el-main class="homeMain">
-              <router-view></router-view>
-              <!-- <blog-main></blog-main> -->
-            </el-main>
-          </el-col>
-        </el-row>
-      </el-container>
-      <template>
-        <el-backtop>
-          <i class="el-icon-caret-top"></i>
-        </el-backtop>
-      </template>
+  <div class="homeContent">
+    <el-container>
+      <el-row type="flex">
+        <el-col :md="4" :lg="3" :xl="3" class="hidden-sm-and-down">
+          <el-row type="flex" class="blogger" align="middle">
+            <div>
+              <i class="iconfont iconblogger"></i>
+            </div>
+            <div>
+              <p>Blog</p>
+            </div>
+          </el-row>
+          <blog-aside :isCollapse="isCollapse"></blog-aside>
+        </el-col>
+        <el-col :xs="24" :sm="24" :md="20" :lg="21" :xl="21" class="headerPosition">
+          <el-header style="height:45px;" class="header">
+            <blog-header @ShowMenuListInfo="ShowMenuList"></blog-header>
+          </el-header>
+          <el-main class="main">
+            <!-- <router-view></router-view> -->
+          </el-main>
+        </el-col>
+      </el-row>
     </el-container>
   </div>
 </template>
@@ -63,31 +49,46 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.homeConainer {
-  //width: 100%;
+// .hidden-sm-and-down {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   //height: 100%;
+// }
+// .headerPosition {
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+// }
+// .header {
+//   position: fixed;
+//   width: 100%;
+//   background-color: #ffffff;
+// }
+.main {
 }
-
-.homeHeader {
-  padding: 0;
-  background-color: white;
+.homeContent,
+.el-container,
+.hidden-sm-and-down {
+  height: 100%;
 }
-
-.homeAside {
-  background-color: #263238;
-}
-
-.homeMain {
-  background-color: #ecf0f5;
-  padding-bottom: 0px;
-}
-.asideConainer {
+.el-row {
   width: 100%;
 }
-.aside-left {
-  background-color: #263238;
-  height: 700px;
+.el-header {
+  padding: 0;
 }
-.containerHeigth {
-  min-height: 662px;
+.iconfont {
+  font-size: 0.4rem;
+}
+.blogger {
+  height: 0.8rem;
+  padding-left: 20px;
+}
+.blogger div:first-child {
+  padding: 10px;
+}
+.hidden-sm-and-down {
+  background-color: rgb(38, 50, 56);
 }
 </style>

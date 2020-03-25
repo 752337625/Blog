@@ -1,7 +1,31 @@
 <template>
   <div class="blogHeadConainer">
-    <el-row class="navbar-header" type="flex" justify="flex-start">
-      <el-col :xs="24" :sm="24" :md="4" :lg="3" :xl="3" :style="{width:isCollapse?'64px':''}">
+    <el-row type="flex" justify="space-between">
+      <el-row type="flex">
+        <el-col>
+          <i class="iconfont iconmianbaoxie"></i>
+        </el-col>
+        <el-col>
+          <i class="iconfont iconnotificationbellring"></i>
+        </el-col>
+        <el-col>
+          <i class="iconfont iconicon-"></i>
+        </el-col>
+      </el-row>
+      <el-row type="flex">
+        <el-col>
+          <i class="iconfont icon24gl-portraitMale"></i>
+        </el-col>
+        <el-col>
+          <i class="iconfont iconmianbaoxie"></i>
+        </el-col>
+        <el-col>
+          <i class="iconfont icondots-vertical"></i>
+        </el-col>
+      </el-row>
+    </el-row>
+    <!--<el-row class="navbar-header" >
+       <el-col :xs="24" :sm="24" :md="4" :lg="3" :xl="3" :style="{width:isCollapse?'64px':''}">
         <div class="navbar-header-left">
           <el-row type="flex" justify="flex-start">
             <el-col :xs="21" :sm="21" :md="20" :lg="20" :xl="20" class="blogger">
@@ -19,12 +43,12 @@
         </div>
       </el-col>
       <el-col
-        :md="20"
-        :lg="21"
-        :xl="21"
+        :md="24"
+        :lg="24"
+        :xl="24"
         class="hidden-sm-and-down"
         :style="{width:isCollapse?'100%':''}"
-      >
+      > 
         <div class="navbar-header-rigth">
           <el-row>
             <el-col :span="24" class="iconfontContent">
@@ -41,11 +65,11 @@
               </div>
               <div class="iconfontBorder">
                 <div class="portraitMale" @click="showCard('userInfo')">
-                  <!-- <p style=" padding-right: 0.4rem;font-size: 1.5rem;line-height: 45px;    ">江南一点雨</p> -->
+                 
                   <i class="iconfont icon24gl-portraitMale" style="padding:0 10px"></i>
                 </div>
                 <div style="width:100px">
-                  <!-- <i class="iconfont iconmianbaoxie"></i> -->
+                 
                 </div>
 
                 <div>
@@ -55,14 +79,14 @@
             </el-col>
           </el-row>
         </div>
-      </el-col>
+     </el-col> 
     </el-row>
-    <blogHeadCard v-show="visible" :info="info" :client="client"></blogHeadCard>
+    <blogHeadCard v-show="visible" :info="info" :client="client"></blogHeadCard>-->
   </div>
 </template>
 
 <script>
-import blogHeadCard from "./pc_header_small_components/blogHeaderCard";
+//import blogHeadCard from "./pc_header_small_components/blogHeaderCard";
 export default {
   data: function() {
     return {
@@ -87,7 +111,7 @@ export default {
     };
   },
   components: {
-    blogHeadCard
+    // blogHeadCard
   },
   methods: {
     showCard(mess) {
@@ -107,84 +131,87 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.blogHeadConainer,
-.navbar-header,
-.navbar-header div,
-.navbar-header-left,
-.navbar-header-rigth {
-  height: 100%;
-  line-height: 45px;
-}
-
-.iconmianbaoxie,
-.iconmenu-line,
-.icondengluyemianyonghuming,
-.iconicon- {
-  font-size: 1.9rem;
-  line-height: 45px;
-  display: block;
-}
-
-.menu-icon {
-  text-align: right;
-}
-
-.blogger {
-  display: flex;
-  padding-left: 1.4rem;
-}
-
-.iconfontContent {
-  display: flex;
-  justify-content: space-between;
-}
-
-.iconblogger {
-  font-size: 1.9rem;
-  padding-right: 0.6rem;
-  display: block;
-}
-
-.iconfontContent .portraitMale {
-  display: flex;
-  width: auto;
+.iconfont{
   color: #758697;
-  border-left: 1px solid rgba(0, 0, 0, 0.05);
 }
+// .blogHeadConainer,
+// .navbar-header,
+// .navbar-header div,
+// .navbar-header-left,
+// .navbar-header-rigth {
+//   height: 100%;
+//   line-height: 45px;
+// }
 
-.blogger p {
-  font-size: 1.9rem;
-  line-height: 45px;
-}
+// .iconmianbaoxie,
+// .iconmenu-line,
+// .icondengluyemianyonghuming,
+// .iconicon- {
+//   font-size: 1.9rem;
+//   line-height: 45px;
+//   display: block;
+// }
 
-.navbar-header-left {
-  background-color: #263238;
-  color: white;
-}
+// .menu-icon {
+//   text-align: right;
+// }
 
-.navbar-header-rigth {
-  background: white;
-}
+// .blogger {
+//   display: flex;
+//   padding-left: 1.4rem;
+// }
 
-.iconfontBorder {
-  display: flex;
-}
+// .iconfontContent {
+//   display: flex;
+//   justify-content: space-between;
+// }
 
-.iconfontContent .iconfontBorder > div:hover {
-  background-color: #f2f2f2;
-  cursor: pointer;
-}
+// .iconblogger {
+//   font-size: 1.9rem;
+//   padding-right: 0.6rem;
+//   display: block;
+// }
 
-.iconfontBorder > div {
-  border-right: 1px solid rgba(0, 0, 0, 0.05);
-  width: 50px;
-  text-align: center;
-}
+// .iconfontContent .portraitMale {
+//   display: flex;
+//   width: auto;
+//   color: #758697;
+//   border-left: 1px solid rgba(0, 0, 0, 0.05);
+// }
 
-.iconfontBorder > div i {
-  font-size: 1.9rem;
-  color: #758697;
-  line-height: 45px;
-  display: block;
-}
+// .blogger p {
+//   font-size: 1.9rem;
+//   line-height: 45px;
+// }
+
+// .navbar-header-left {
+//   background-color: #263238;
+//   color: white;
+// }
+
+// .navbar-header-rigth {
+//   background: white;
+// }
+
+// .iconfontBorder {
+//   display: flex;
+// }
+
+// .iconfontContent .iconfontBorder > div:hover {
+//   background-color: #f2f2f2;
+//   cursor: pointer;
+// }
+
+// .iconfontBorder > div {
+//   border-right: 1px solid rgba(0, 0, 0, 0.05);
+//   width: 50px;
+//   text-align: center;
+// }
+
+// .iconfontBorder > div i {
+//   font-size: 1.9rem;
+//   color: #758697;
+//   line-height: 45px;
+//   display: block;
+// }
 </style>

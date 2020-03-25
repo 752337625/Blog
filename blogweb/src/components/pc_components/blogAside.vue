@@ -11,74 +11,18 @@
       style="border: 0;"
       router
     >
-      <el-menu-item index="/odometer">
-        <i class="el-icon-odometer"></i>
-        <span slot="title">仪表盘</span>
-      </el-menu-item>
-      <el-menu-item index="2">
-        <i class="el-icon-location"></i>
-        <span slot="title">系统管理</span>
-      </el-menu-item>
-      <el-menu-item index="3">
-        <i class="el-icon-document"></i>
-        <span slot="title">广告管理</span>
-      </el-menu-item>
-      <el-submenu index="4">
+      <el-submenu v-for="(item ,index) in menuItem" :index="item.index" :key="index">
         <template slot="title">
-          <i class="el-icon-document"></i>
-          <span>菜单管理</span>
+          <i :class="item.icon"></i>
+          <span slot="title">{{item.text}}</span>
         </template>
-        <el-menu-item index="4-1-1">
+        <el-menu-item v-for="(children,key) in item.children" :index="children.index" :key="key">
           <template>
-            <i class="el-icon-document"></i>
-            <span>菜单设置</span>
-          </template>
-        </el-menu-item>
-        <el-menu-item index="6-1-2">
-          <template>
-            <i class="el-icon-document"></i>
-            <span>菜单授权</span>
+            <i :class="children.icon"></i>
+            <span>{{children.text}}</span>
           </template>
         </el-menu-item>
       </el-submenu>
-      <el-menu-item index="5">
-        <i class="el-icon-setting"></i>
-        <span slot="title">留言管理</span>
-      </el-menu-item>
-      <el-submenu index="6">
-        <template slot="title">
-          <i class="el-icon-document"></i>
-          <span>文章管理</span>
-        </template>
-        <el-menu-item index="/addBlog">
-          <template>
-            <i class="el-icon-document"></i>
-            <span>新增文章</span>
-          </template>
-        </el-menu-item>
-        <el-menu-item index="/listOperationBlog">
-          <template>
-            <i class="el-icon-document"></i>
-            <span>文章列表</span>
-          </template>
-        </el-menu-item>
-      </el-submenu>
-      <el-menu-item index="7">
-        <i class="el-icon-menu"></i>
-        <span slot="title">数据管理</span>
-      </el-menu-item>
-      <el-menu-item index="8">
-        <i class="el-icon-menu"></i>
-        <span slot="title">采集管理</span>
-      </el-menu-item>
-      <el-menu-item index="9">
-        <i class="el-icon-menu"></i>
-        <span slot="title">音乐管理</span>
-      </el-menu-item>
-      <el-menu-item index="9">
-        <i class="el-icon-menu"></i>
-        <span slot="title">附件管理</span>
-      </el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -87,7 +31,88 @@
 export default {
   props: ["isCollapse"],
   data: function() {
-    return {};
+    return {
+      menuItem: [
+        {
+          index: "/odometer",
+          text: "仪表盘",
+          icon: "el-icon-odometer",
+          children: []
+        },
+        { index: "/1", text: "菜单管理", icon: "el-icon-odometer", children: [] },
+        { index: "/2", text: "广告管理", icon: "el-icon-odometer", children: [] },
+        { index: "/3", text: "留言管理", icon: "el-icon-odometer", children: [] },
+        {
+          index: "/6",
+          text: "文章管理",
+          icon: "el-icon-document",
+          children: [
+            { index: "/addBlog", text: "新增文章", icon: "el-icon-document" },
+            {
+              index: "/listOperationBlog",
+              text: "文章列表",
+              icon: "el-icon-document"
+            },
+            {
+              index: "/7",
+              text: "文章列表",
+              icon: "el-icon-document"
+            },
+            {
+              index: "/8",
+              text: "文章列表",
+              icon: "el-icon-document"
+            }
+          ]
+        },
+        {
+          index: "/9",
+          text: "文章管理",
+          icon: "el-icon-document",
+          children: [
+            { index: "/addBlog", text: "新增文章", icon: "el-icon-document" },
+            {
+              index: "/listOperationBlog",
+              text: "文章列表",
+              icon: "el-icon-document"
+            },
+            {
+              index: "/10",
+              text: "文章列表",
+              icon: "el-icon-document"
+            },
+            {
+              index: "/11",
+              text: "文章列表",
+              icon: "el-icon-document"
+            }
+          ]
+        },
+        {
+          index: "/12",
+          text: "文章管理",
+          icon: "el-icon-document",
+          children: [
+            { index: "/addBlog", text: "新增文章", icon: "el-icon-document" },
+            {
+              index: "/listOperationBlog",
+              text: "文章列表",
+              icon: "el-icon-document"
+            },
+            {
+              index: "/17",
+              text: "文章列表",
+              icon: "el-icon-document"
+            },
+            {
+              index: "/18",
+              text: "文章列表",
+              icon: "el-icon-document"
+            }
+          ]
+        }
+      ]
+    };
   },
   components: {},
   methods: {
@@ -102,4 +127,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.el-submenu .el-menu-item {
+  min-width: auto;
+}
 </style>

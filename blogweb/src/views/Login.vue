@@ -1,10 +1,10 @@
 <template>
   <div class="loginConainer">
-    <el-row class="loginbox">
+    <el-row type="flex" justify="center">
       <el-col :xs="21" :sm="11" :md="10" :lg="7" :xl="9" class="loginboxItem">
         <el-row type="flex" justify="center">
           <el-col :xs="18" :sm="17" :md="16" :lg="15" :xl="15">
-            <h1>后台管理系统</h1>
+            <strong>后台管理系统</strong>
           </el-col>
         </el-row>
         <el-form
@@ -109,32 +109,37 @@ export default {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-clip: border-box;
-  font-size: 1rem;
 }
-
-.loginbox {
+.el-row{
   height: 100%;
 }
+.el-row>div{
+background-color: #ffffff; 
 
-.loginboxItem {
-  height: 17rem;
-  background: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 0.5rem;
-  box-shadow: 0px 0px 15px #545454;
 }
+// .loginbox {
+//   height: 100%;
+// }
 
-h1 {
-  text-align: center;
-  color: #409eff;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-}
+// .loginboxItem {
+//   height: 6rem;
+//   background: white;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   border-radius: 0.5rem;
+//   box-shadow: 0px 0px 15px #545454;
+// }
 
-.buttonPosition {
-  text-align: center;
-}
+// h1 {
+//   text-align: center;
+//   color: #409eff;
+//   margin-block-start: 0.67em;
+//   margin-block-end: 0.67em;
+// }
+
+// .buttonPosition {
+//   text-align: center;
+// }
 </style>
