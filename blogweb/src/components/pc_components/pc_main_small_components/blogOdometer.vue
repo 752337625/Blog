@@ -1,5 +1,5 @@
 <template>
-  <div class="mainConainer">
+  <div class="mainConainer" >
     <div></div>
     <!-- <BlogBreadCrumb :BreadCrumbInfo="BreadCrumbInfo"></BlogBreadCrumb> -->
     <el-row class="row-margin">

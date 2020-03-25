@@ -1,7 +1,7 @@
 <template>
   <div class="mainConainer">
     <BlogBreadCrumb :BreadCrumbInfo="BreadCrumbInfo"></BlogBreadCrumb>
-    <el-card class="box-card ql-container ql-snow">
+    <el-card class="box-card">
       <el-row style="margin-bottom: 10px;" type="flex" justify="start" align="middle">
         <el-col :span="24">
           <el-form
@@ -10,16 +10,20 @@
             :model="formLabelAlign"
             inline
           >
-            <el-form-item label="作者">
-              <el-input v-model="formLabelAlign.name" size="mini "></el-input>
+            <el-form-item label="作者" label-width="auto">
+              <el-input v-model="formLabelAlign.name" size="mini "  clearable></el-input>
             </el-form-item>
-            <el-form-item label="标题" size="mini ">
-              <el-input v-model="formLabelAlign.type"></el-input>
+            <el-form-item label="标题"  label-width="auto">
+              <el-input v-model="formLabelAlign.type"  clearable size="mini "></el-input>
             </el-form-item>
-            <el-form-item label="创建时间" size="mini ">
-              <el-input v-model="formLabelAlign.region"></el-input>
+            <el-form-item label="创建时间" label-width="auto">
+              <el-date-picker
+                type="date"
+                placeholder="选择日期"
+                v-model="formLabelAlign.region"
+                size="mini "
+              ></el-date-picker>
             </el-form-item>
-           
           </el-form>
         </el-col>
       </el-row>
@@ -79,105 +83,134 @@ export default {
           width: "100"
         }
       ],
-      columnData: [{
-        index: "100",
-        name: "易烊千玺",
-        blog: "我的第一个博客生涯就这没开始了,有没有有没有",
-        desc: "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
-        createTime: "2016-05-02",
-        updateTime: "2016-05-02",
-      }, {
-        index: "100",
-        name: "易烊千玺",
-        blog: "我的第一个博客生涯就这没开始了,有没有有没有",
-        desc: "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
-        createTime: "2016-05-02",
-        updateTime: "2016-05-02",
-      }, {
-        index: "100",
-        name: "易烊千玺",
-        blog: "我的第一个博客生涯就这没开始了,有没有有没有",
-        desc: "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
-        createTime: "2016-05-02",
-        updateTime: "2016-05-02",
-      }, {
-        index: "100",
-        name: "易烊千玺",
-        blog: "我的第一个博客生涯就这没开始了,有没有有没有",
-        desc: "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
-        createTime: "2016-05-02",
-        updateTime: "2016-05-02",
-      }, {
-        index: "100",
-        name: "易烊千玺",
-        blog: "我的第一个博客生涯就这没开始了,有没有有没有",
-        desc: "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
-        createTime: "2016-05-02",
-        updateTime: "2016-05-02",
-      }, {
-        index: "100",
-        name: "易烊千玺",
-        blog: "我的第一个博客生涯就这没开始了,有没有有没有",
-        desc: "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
-        createTime: "2016-05-02",
-        updateTime: "2016-05-02",
-      }, {
-        index: "100",
-        name: "易烊千玺",
-        blog: "我的第一个博客生涯就这没开始了,有没有有没有",
-        desc: "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
-        createTime: "2016-05-02",
-        updateTime: "2016-05-02",
-      }, {
-        index: "100",
-        name: "易烊千玺",
-        blog: "我的第一个博客生涯就这没开始了,有没有有没有",
-        desc: "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
-        createTime: "2016-05-02",
-        updateTime: "2016-05-02",
-      }, {
-        index: "100",
-        name: "易烊千玺",
-        blog: "我的第一个博客生涯就这没开始了,有没有有没有",
-        desc: "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
-        createTime: "2016-05-02",
-        updateTime: "2016-05-02",
-      }, {
-        index: "100",
-        name: "易烊千玺",
-        blog: "我的第一个博客生涯就这没开始了,有没有有没有",
-        desc: "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
-        createTime: "2016-05-02",
-        updateTime: "2016-05-02",
-      }, {
-        index: "100",
-        name: "易烊千玺",
-        blog: "我的第一个博客生涯就这没开始了,有没有有没有",
-        desc: "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
-        createTime: "2016-05-02",
-        updateTime: "2016-05-02",
-      }, {
-        index: "100",
-        name: "易烊千玺",
-        blog: "我的第一个博客生涯就这没开始了,有没有有没有",
-        desc: "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
-        createTime: "2016-05-02",
-        updateTime: "2016-05-02",
-      }, {
-        index: "100",
-        name: "易烊千玺",
-        blog: "我的第一个博客生涯就这没开始了,有没有有没有",
-        desc: "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
-        createTime: "2016-05-02",
-        updateTime: "2016-05-02",
-      }, {
-        index: "100",
-        name: "易烊千玺",
-        blog: "我的第一个博客生涯就这没开始了,有没有有没有",
-        desc: "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
-        createTime: "2016-05-02",
-        updateTime: "2016-05-02",
-      }]
+      columnData: [
+        {
+          index: "100",
+          name: "易烊千玺",
+          blog: "我的第一个博客生涯就这没开始了,有没有有没有",
+          desc:
+            "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
+          createTime: "2016-05-02",
+          updateTime: "2016-05-02"
+        },
+        {
+          index: "100",
+          name: "易烊千玺",
+          blog: "我的第一个博客生涯就这没开始了,有没有有没有",
+          desc:
+            "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
+          createTime: "2016-05-02",
+          updateTime: "2016-05-02"
+        },
+        {
+          index: "100",
+          name: "易烊千玺",
+          blog: "我的第一个博客生涯就这没开始了,有没有有没有",
+          desc:
+            "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
+          createTime: "2016-05-02",
+          updateTime: "2016-05-02"
+        },
+        {
+          index: "100",
+          name: "易烊千玺",
+          blog: "我的第一个博客生涯就这没开始了,有没有有没有",
+          desc:
+            "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
+          createTime: "2016-05-02",
+          updateTime: "2016-05-02"
+        },
+        {
+          index: "100",
+          name: "易烊千玺",
+          blog: "我的第一个博客生涯就这没开始了,有没有有没有",
+          desc:
+            "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
+          createTime: "2016-05-02",
+          updateTime: "2016-05-02"
+        },
+        {
+          index: "100",
+          name: "易烊千玺",
+          blog: "我的第一个博客生涯就这没开始了,有没有有没有",
+          desc:
+            "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
+          createTime: "2016-05-02",
+          updateTime: "2016-05-02"
+        },
+        {
+          index: "100",
+          name: "易烊千玺",
+          blog: "我的第一个博客生涯就这没开始了,有没有有没有",
+          desc:
+            "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
+          createTime: "2016-05-02",
+          updateTime: "2016-05-02"
+        },
+        {
+          index: "100",
+          name: "易烊千玺",
+          blog: "我的第一个博客生涯就这没开始了,有没有有没有",
+          desc:
+            "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
+          createTime: "2016-05-02",
+          updateTime: "2016-05-02"
+        },
+        {
+          index: "100",
+          name: "易烊千玺",
+          blog: "我的第一个博客生涯就这没开始了,有没有有没有",
+          desc:
+            "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
+          createTime: "2016-05-02",
+          updateTime: "2016-05-02"
+        },
+        {
+          index: "100",
+          name: "易烊千玺",
+          blog: "我的第一个博客生涯就这没开始了,有没有有没有",
+          desc:
+            "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
+          createTime: "2016-05-02",
+          updateTime: "2016-05-02"
+        },
+        {
+          index: "100",
+          name: "易烊千玺",
+          blog: "我的第一个博客生涯就这没开始了,有没有有没有",
+          desc:
+            "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
+          createTime: "2016-05-02",
+          updateTime: "2016-05-02"
+        },
+        {
+          index: "100",
+          name: "易烊千玺",
+          blog: "我的第一个博客生涯就这没开始了,有没有有没有",
+          desc:
+            "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
+          createTime: "2016-05-02",
+          updateTime: "2016-05-02"
+        },
+        {
+          index: "100",
+          name: "易烊千玺",
+          blog: "我的第一个博客生涯就这没开始了,有没有有没有",
+          desc:
+            "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
+          createTime: "2016-05-02",
+          updateTime: "2016-05-02"
+        },
+        {
+          index: "100",
+          name: "易烊千玺",
+          blog: "我的第一个博客生涯就这没开始了,有没有有没有",
+          desc:
+            "感觉很尬易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺易烊千玺",
+          createTime: "2016-05-02",
+          updateTime: "2016-05-02"
+        }
+      ]
     };
   },
   components: {
@@ -199,8 +232,15 @@ export default {
 .box-card {
   //min-height: 627px;
 }
-
-.mainConainer {
-  height: 99%;
+.el-form-item--mini.el-form-item {
+  margin-bottom: 0px;
+}
+.el-form-item {
+  margin-bottom: 0px;
+}
+.el-form.el-form--label-right.el-form--inline {
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 </style>

@@ -78,13 +78,14 @@ export default {
 
 .homeMain {
   background-color: #ecf0f5;
+  padding-bottom: 0px;
 }
 .asideConainer {
   width: 100%;
 }
 .aside-left {
   background-color: #263238;
-  max-height: 800px;
+  height: 700px;
 }
 .containerHeigth {
   min-height: 662px;
