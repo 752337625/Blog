@@ -1,10 +1,10 @@
 <template>
   <div class="homeConainer">
-    <el-container style="height: 100%;">
+    <el-container style>
       <el-header style="height:45px;" class="homeHeader">
         <blog-header @ShowMenuListInfo="ShowMenuList"></blog-header>
       </el-header>
-      <el-container>
+      <el-container class="containerHeigth">
         <el-row type="flex" class="asideConainer">
           <el-col
             :md="4"
@@ -31,6 +31,11 @@
           </el-col>
         </el-row>
       </el-container>
+      <template>
+        <el-backtop>
+          <i class="el-icon-caret-top"></i>
+        </el-backtop>
+      </template>
     </el-container>
   </div>
 </template>
@@ -38,7 +43,6 @@
 <script>
 import blogHeader from "../components/pc_components/blogHeader";
 import blogAside from "../components/pc_components/blogAside";
-//import blogMain from '../components/pc_components/blogMain'
 export default {
   data: function() {
     return {
@@ -60,10 +64,7 @@ export default {
 
 <style lang="less" scoped>
 .homeConainer {
-  //height: 100%;
-  width: 100%;
-  height: 100%;
-    overflow: hidden;
+  //width: 100%;
 }
 
 .homeHeader {
@@ -76,17 +77,16 @@ export default {
 }
 
 .homeMain {
-   height: 100%;
-  //min-height: 100%;
   background-color: #ecf0f5;
-  //overflow: hidden;
 }
 .asideConainer {
   width: 100%;
 }
 .aside-left {
   background-color: #263238;
-  min-height: 700px;
-  // height: 100%;
+  max-height: 800px;
+}
+.containerHeigth {
+  min-height: 662px;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="blogAsideConainer">
     <el-menu
-      default-active="1"
+      default-active="/odometer"
       :collapse-transition="false"
       :unique-opened="true"
       :collapse="isCollapse"

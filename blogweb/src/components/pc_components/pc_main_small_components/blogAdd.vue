@@ -2,7 +2,7 @@
   <div class="mainConainer">
 
     <BlogBreadCrumb :BreadCrumbInfo="BreadCrumbInfo"></BlogBreadCrumb>
-    <el-card class="box-card ql-container ql-snow">
+    <el-card class="box-card">
       <el-row type="flex" justify="space-between" align="middle" style="margin-bottom: 10px;">
         <div>
          <h2>欢迎使用我的</h2>
@@ -46,9 +46,9 @@ export default {
 
 <style lang="less" scoped>
 .box-card {
-  height: 627px;
+  //height: 627px;
 }
 .mainConainer {
-  height: 100%;
+  //height: 100%;
 }
 </style>

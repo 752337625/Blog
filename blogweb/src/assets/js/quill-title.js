@@ -39,4 +39,6 @@ var addQuillTitle = function () {
     item.parentNode.title = titleConfig[item.classList[0]]
   })
 };
-export {addQuillTitle}
+export {
+  addQuillTitle
+}

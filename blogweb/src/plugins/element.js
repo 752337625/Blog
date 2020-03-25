@@ -24,6 +24,8 @@ import {
     Table,
     TableColumn,
     Pagination,
+    Divider,
+    Backtop,
 } from 'element-ui';
 //Layout 布局隐藏
 import 'element-ui/lib/theme-chalk/display.css';
@@ -49,4 +51,6 @@ Vue.use(BreadcrumbItem)
 Vue.use(Table)
 Vue.use(TableColumn)
 Vue.use(Pagination)
+Vue.use(Divider)
+Vue.use(Backtop)
 Vue.prototype.$message = Message;
