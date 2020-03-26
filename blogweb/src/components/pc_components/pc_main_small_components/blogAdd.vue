@@ -1,11 +1,10 @@
 <template>
   <div class="mainConainer">
-
     <BlogBreadCrumb :BreadCrumbInfo="BreadCrumbInfo"></BlogBreadCrumb>
     <el-card class="box-card">
       <el-row type="flex" justify="space-between" align="middle" style="margin-bottom: 10px;">
         <div>
-         <h2>欢迎使用我的</h2>
+          <h2>欢迎使用我的</h2>
         </div>
         <div>
           <el-button type="primary" size="small">保存草稿</el-button>
@@ -40,15 +39,11 @@ export default {
   components: {
     BlogBreadCrumb
   },
-  methods: {}
 };
 </script>
 
 <style lang="less" scoped>
-.box-card {
-  //height: 627px;
-}
-.mainConainer {
-  //height: 100%;
+h2 {
+  font-size: 33px;
 }
 </style>

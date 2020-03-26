@@ -11,6 +11,8 @@ body,
     background-color: #ECF0F5;
     font-size: 0.4rem;
     color: rgb(255, 255, 255);
+    /* height: 10000px; */
+    overflow: hidden;
 }
 
 .ql-tooltip.ql-editing {

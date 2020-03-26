@@ -2,91 +2,34 @@
   <div class="blogHeadConainer">
     <el-row type="flex" justify="space-between">
       <el-row type="flex">
-        <el-col>
-          <i class="iconfont iconmianbaoxie"></i>
+        <el-col >
+          <i class="iconfont iconmianbaoxie" @click="showCard('menuListInfo')"></i>
         </el-col>
         <el-col>
-          <i class="iconfont iconnotificationbellring"></i>
+          <i class="iconfont iconnotificationbellring"  @click="showCard('messageInfo')"></i>
         </el-col>
-        <el-col>
-          <i class="iconfont iconicon-"></i>
+        <el-col >
+          <i class="iconfont iconicon-" @click="showCard('menuInfo')"></i>
         </el-col>
       </el-row>
       <el-row type="flex">
-        <el-col>
-          <i class="iconfont icon24gl-portraitMale"></i>
+        <el-col  style="border-left: 1px solid rgba(0, 0, 0, 0.05);">
+          <i class="iconfont icon24gl-portraitMale" @click="showCard('userInfo')"></i>
         </el-col>
         <el-col>
           <i class="iconfont iconmianbaoxie"></i>
         </el-col>
-        <el-col>
+        <el-col style="border-left: 0;">
           <i class="iconfont icondots-vertical"></i>
         </el-col>
       </el-row>
     </el-row>
-    <!--<el-row class="navbar-header" >
-       <el-col :xs="24" :sm="24" :md="4" :lg="3" :xl="3" :style="{width:isCollapse?'64px':''}">
-        <div class="navbar-header-left">
-          <el-row type="flex" justify="flex-start">
-            <el-col :xs="21" :sm="21" :md="20" :lg="20" :xl="20" class="blogger">
-              <div>
-                <i class="iconfont iconblogger"></i>
-              </div>
-              <div>
-                <p>Blog</p>
-              </div>
-            </el-col>
-            <el-col :xs="3" :sm="3" :md="4" class="hidden-md-and-up menu-icon">
-              <i class="iconfont iconmianbaoxie"></i>
-            </el-col>
-          </el-row>
-        </div>
-      </el-col>
-      <el-col
-        :md="24"
-        :lg="24"
-        :xl="24"
-        class="hidden-sm-and-down"
-        :style="{width:isCollapse?'100%':''}"
-      > 
-        <div class="navbar-header-rigth">
-          <el-row>
-            <el-col :span="24" class="iconfontContent">
-              <div class="iconfontBorder">
-                <div @click="showCard('menuListInfo')">
-                  <i class="iconfont iconmianbaoxie"></i>
-                </div>
-                <div @click="showCard('messageInfo')">
-                  <i class="iconfont iconnotificationbellring"></i>
-                </div>
-                <div @click="showCard('menuInfo')">
-                  <i class="iconfont iconicon-"></i>
-                </div>
-              </div>
-              <div class="iconfontBorder">
-                <div class="portraitMale" @click="showCard('userInfo')">
-                 
-                  <i class="iconfont icon24gl-portraitMale" style="padding:0 10px"></i>
-                </div>
-                <div style="width:100px">
-                 
-                </div>
-
-                <div>
-                  <i class="iconfont icondots-vertical"></i>
-                </div>
-              </div>
-            </el-col>
-          </el-row>
-        </div>
-     </el-col> 
-    </el-row>
-    <blogHeadCard v-show="visible" :info="info" :client="client"></blogHeadCard>-->
+    <blogHeadCard v-show="visible" :info="info" :client="client"></blogHeadCard>
   </div>
 </template>
 
 <script>
-//import blogHeadCard from "./pc_header_small_components/blogHeaderCard";
+import blogHeadCard from "./pc_header_small_components/blogHeaderCard";
 export default {
   data: function() {
     return {
@@ -111,10 +54,11 @@ export default {
     };
   },
   components: {
-    // blogHeadCard
+    blogHeadCard
   },
   methods: {
     showCard(mess) {
+      console.log(1)
       if (mess == "menuListInfo") {
         this.$emit("ShowMenuListInfo", !this.isCollapse); //自定义事件  传递值“子向父组件传值”
         this.isCollapse = !this.isCollapse;
@@ -131,8 +75,26 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.iconfont{
+.iconfont {
   color: #758697;
+}
+.blogHeadConainer,
+.blogHeadConainer > div,
+i {
+  height: 100%;
+}
+.blogHeadConainer > div > div div {
+  width: 50px;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+.iconfont {
+  font-size: 30px;
+  display: block;
+  line-height: 45px;
+}
+.iconfont:hover {
+  cursor: pointer;
 }
 // .blogHeadConainer,
 // .navbar-header,

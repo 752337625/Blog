@@ -1,7 +1,7 @@
 <template>
   <div class="homeContent">
     <el-container>
-      <el-row type="flex">
+      <el-row type="flex" class="rowPosition">
         <el-col :md="4" :lg="3" :xl="3" class="hidden-sm-and-down">
           <el-row type="flex" class="blogger" align="middle">
             <div>
@@ -17,8 +17,15 @@
           <el-header style="height:45px;" class="header">
             <blog-header @ShowMenuListInfo="ShowMenuList"></blog-header>
           </el-header>
-          <el-main class="main">
-            <!-- <router-view></router-view> -->
+          <el-main>
+            <!-- <div style="height: 1000px;">
+ <div v-for="o in 10000" :key="o" class="text item">
+            {{'列表内容 ' + o }}
+        </div> 
+            </div>-->
+
+          <router-view></router-view>
+            
           </el-main>
         </el-col>
       </el-row>
@@ -42,6 +49,7 @@ export default {
   },
   methods: {
     ShowMenuList(visible) {
+      console.log(visible);
       this.isCollapse = visible;
     }
   }
@@ -49,24 +57,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-// .hidden-sm-and-down {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   //height: 100%;
-// }
-// .headerPosition {
-//   position: absolute;
-//   right: 0;
-//   top: 0;
-// }
-// .header {
-//   position: fixed;
-//   width: 100%;
-//   background-color: #ffffff;
-// }
-.main {
-}
+
 .homeContent,
 .el-container,
 .hidden-sm-and-down {
@@ -75,20 +66,42 @@ export default {
 .el-row {
   width: 100%;
 }
+.rowPosition {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 .el-header {
   padding: 0;
+  background-color: #fff;
 }
-.iconfont {
-  font-size: 0.4rem;
+.iconfont,
+p {
+  font-size: 30px;
+  display: block;
 }
+
 .blogger {
-  height: 0.8rem;
+  height: 45px;
   padding-left: 20px;
 }
-.blogger div:first-child {
-  padding: 10px;
-}
+
 .hidden-sm-and-down {
   background-color: rgb(38, 50, 56);
+  background-color: #263238;
+  float: left;
+
+  height: 100%;
+}
+.headerPosition {
+  float: right;
+
+  height: 100%;
+}
+.el-main {
+      height: 100%;
 }
 </style>

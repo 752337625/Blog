@@ -47,14 +47,14 @@
           </div>
         </el-card>
       </el-row>
-      <el-row style="flex:0.5">
-        <el-card class style="height: 10000px;">
+      <el-row style="flex:0.5;margin-bottom: 40px;">
+        <el-card class style="height: 500px;">
           <div>
             <strong>最近运维</strong>
             <el-divider></el-divider>
           </div>
         </el-card>
-        <el-card class style="flex:0.5">
+        <el-card class style="flex:0.5;height: 500px;"  >
           <div>
             <strong>开发者新闻</strong>
             <el-divider></el-divider>
