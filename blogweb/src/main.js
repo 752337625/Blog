@@ -3,7 +3,8 @@ import App from './App.vue'
 import router from './router'
 import './plugins/element.js'
 
-import {fontRate} from './assets/js/comment.js'
+import { fontRate } from './assets/js/comment.js'
+import { date } from './assets/js/date.js'
 //全局样式
 import './assets/css/global.css'
 //全局iconfont
@@ -19,7 +20,7 @@ Vue.use(VueQuillEditor, /* { default global options } */ )
 import axios from './assets/js/axios'
 // //自定义事件时间modul
 // import{date} from './assets/js/date'
-// Vue.prototype.$date = date
+Vue.prototype.$date = date
 Vue.prototype.$http = axios
 Vue.prototype.$fontRate = fontRate
 Vue.config.productionTip = false

@@ -3,13 +3,17 @@ import VueRouter from 'vue-router'
 import Login from '../views/Login'
 import Home from '../views/Home'
 import BlogOdometer from '../components/pc_components/pc_main_small_components/blogOdometer'
-import BlogAdd from '../components/pc_components/pc_main_small_components/blogAdd'
-import BlogListOperation from '../components/pc_components/pc_main_small_components/blogListOperation'
+import BlogUser from '../components/pc_components/pc_main_small_components/blogUser'
+import BlogUserAdd from '../components/pc_components/pc_main_small_components/blogUserAdd'
+
 
 
 Vue.use(VueRouter)
 
 const routes = [{
+        path: "*",
+        redirect: "Home"
+    }, {
         path: "/",
         redirect: "Login"
     },
@@ -17,6 +21,7 @@ const routes = [{
         path: "/Login",
         component: Login
     },
+
     {
         path: "/Home",
         component: Home,
@@ -24,14 +29,16 @@ const routes = [{
         children: [{
                 path: '/odometer',
                 component: BlogOdometer
+
             }, {
-                path: '/addBlog',
-                component: BlogAdd
+                path: '/blogUserAdd',
+                component: BlogUserAdd
+            }, {
+                path: '/blogUserList',
+                component: BlogUser
             },
-            {
-                path: '/listOperationBlog',
-                component: BlogListOperation
-            }
+
+
         ]
     }
 ]

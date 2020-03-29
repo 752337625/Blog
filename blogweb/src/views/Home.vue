@@ -18,14 +18,7 @@
             <blog-header @ShowMenuListInfo="ShowMenuList"></blog-header>
           </el-header>
           <el-main>
-            <!-- <div style="height: 1000px;">
- <div v-for="o in 10000" :key="o" class="text item">
-            {{'列表内容 ' + o }}
-        </div> 
-            </div>-->
-
-          <router-view></router-view>
-            
+           <router-view></router-view>
           </el-main>
         </el-col>
       </el-row>

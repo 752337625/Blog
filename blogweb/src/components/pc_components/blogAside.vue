@@ -89,26 +89,13 @@ export default {
           ]
         },
         {
-          index: "/12",
-          text: "文章管理",
-          icon: "el-icon-document",
+          index: "/user",
+          text: "博主管理",
+          icon: "el-icon-user-solid",
           children: [
-            { index: "/addBlog", text: "新增文章", icon: "el-icon-document" },
-            {
-              index: "/listOperationBlog",
-              text: "文章列表",
-              icon: "el-icon-document"
-            },
-            {
-              index: "/17",
-              text: "文章列表",
-              icon: "el-icon-document"
-            },
-            {
-              index: "/18",
-              text: "文章列表",
-              icon: "el-icon-document"
-            }
+              { index: "/blogUserAdd", text: "博主新增", icon: "el-icon-user-solid" },
+              { index: "/blogUserList", text: "博主列表", icon: "el-icon-user-solid" },
+           
           ]
         }
       ]

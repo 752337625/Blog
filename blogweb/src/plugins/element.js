@@ -28,9 +28,30 @@ import {
     Backtop,
     Loading,
     DatePicker,
+    Select,
+    Option,
+    Tabs,
+    TabPane,
+    Tag,
+    TimeSelect,
+    TimePicker,
+    Switch,
+    CheckboxGroup,
+    CheckboxButton,
+    Checkbox,
+    RadioButton,
+    RadioGroup,
+    Radio,
 } from 'element-ui';
 //Layout 布局隐藏
 import 'element-ui/lib/theme-chalk/display.css';
+Vue.use(Radio);
+Vue.use(RadioGroup);
+Vue.use(RadioButton);
+Vue.use(Checkbox);
+Vue.use(CheckboxButton);
+Vue.use(CheckboxGroup);
+
 Vue.use(Button)
 Vue.use(Row)
 Vue.use(Col)
@@ -56,4 +77,10 @@ Vue.use(Pagination)
 Vue.use(Divider)
 Vue.use(Backtop)
 Vue.use(DatePicker);
+Vue.use(Select);
+Vue.use(Option);
+Vue.use(Tabs);
+Vue.use(TabPane);
+Vue.use(TimePicker);
+Vue.use(Switch);
 Vue.prototype.$message = Message;

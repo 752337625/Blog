@@ -1,7 +1,5 @@
 <template>
   <div class="mainConainer" >
-    <div></div>
-    <!-- <BlogBreadCrumb :BreadCrumbInfo="BreadCrumbInfo"></BlogBreadCrumb> -->
     <el-row class="row-margin">
       <el-card class>
         <div>
@@ -40,7 +38,7 @@
             <el-divider></el-divider>
           </div>
         </el-card>
-        <el-card class >
+        <el-card>
           <div>
             <strong>高级账户</strong>
             <el-divider></el-divider>
@@ -48,7 +46,7 @@
         </el-card>
       </el-row>
       <el-row style="flex:0.5;margin-bottom: 40px;">
-        <el-card class style="height: 500px;">
+        <el-card style="height: 500px;">
           <div>
             <strong>最近运维</strong>
             <el-divider></el-divider>
@@ -83,6 +81,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.mainConainer {
+    background-color: #E7EAED;
+}
+
 .el-divider {
   margin: 0 0 10px 0;
 }
