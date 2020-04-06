@@ -7,5 +7,7 @@ import bonc.com.cn.entity.User;
 public interface LoginDao extends JpaRepository<User, Integer>{
 	
 	User findByUserName(String username);  
+	
+	
 
 }

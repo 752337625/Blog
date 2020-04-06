@@ -66,6 +66,11 @@ input {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .clearfix {
     clear: both;
     content: "";
@@ -118,13 +123,14 @@ html,
 body,
 #app,
 .loginConainer,
-.registerConainer {
+.registerConainer,
+.homeContent {
     height: 100%;
     width: 100%;
     overflow: hidden;
     /* 不兼容ie: 6; */
     min-width: 768px;
-    background-color: #ccc;
+    background-color: #fff;
 }
 
 .el-form-item__error {

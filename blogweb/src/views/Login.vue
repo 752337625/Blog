@@ -3,9 +3,9 @@
     <el-col :xs="5" :sm="8" :md="8" :lg="7" :xl="9" class="loginForm pa">
       <h1>后台管理系统</h1>
       <el-form label-position="left" :model="userInfo" :rules="rules" ref="ruleForm" size="medium">
-        <el-form-item prop="username">
+        <el-form-item prop="userName">
           <el-input
-            v-model="userInfo.username"
+            v-model="userInfo.userName"
             prefix-icon="iconfont iconuser_login"
             clearable
             placeholder="用户名"
@@ -38,11 +38,13 @@ export default {
     return {
       checked: false,
       userInfo: {
-        username: "",
-        password: ""
+        userName: "",
+        password: "",
+        IP: returnCitySN["cip"],
+        address: returnCitySN["cname"],
       },
       rules: {
-        username: [
+        userName: [
           {
             required: true,
             min: 3,
@@ -74,11 +76,9 @@ export default {
           "/LoginData",
           this.$qs.stringify(this.userInfo)
         );
-        console.log(res)
-        //if (res.statue != 200)
-        //return this.$message.error("用户名和密码不正确,请重新登录");
-        //window.sessionStorage.setItem("token", "555555555");
-        //this.$router.push("/Home");
+        //if (res.statue != 200) return this.$message.error(res.message);
+        window.sessionStorage.setItem("token", "555555555");
+        this.$router.push("/Home");
       });
     },
 
