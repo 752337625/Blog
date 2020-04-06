@@ -1,101 +1,140 @@
 <template>
   <div class="loginConainer">
-    <el-row type="flex" justify="center">
-      <el-col :xs="21" :sm="10" :md="8" :lg="6" :xl="7" class="loginboxItem">
-        <el-row type="flex" justify="center">
-          <el-col :xs="18" :sm="17" :md="16" :lg="15" :xl="15">
-            <h1>后台管理系统</h1>
-          </el-col>
-        </el-row>
-        <el-form
-          label-position="top"
-          label-width="80px"
-          :model="userInfo"
-          :rules="rules"
-          ref="ruleForm"
-        >
-          <el-row type="flex" justify="center">
-            <el-col :xs="18" :sm="17" :md="16" :lg="15" :xl="15">
-              <el-form-item label prop="name">
-                <el-input v-model="userInfo.name" prefix-icon="iconfont iconuser_login"></el-input>
-              </el-form-item>
-            </el-col>
-          </el-row>
-          <el-row type="flex" justify="center">
-            <el-col :xs="18" :sm="17" :md="16" :lg="15" :xl="15">
-              <el-form-item label prop="pass">
-                <el-input v-model="userInfo.pass" prefix-icon="iconfont iconpass" show-password></el-input>
-              </el-form-item>
-            </el-col>
-          </el-row>
-          <el-row type="flex" justify="center">
-            <el-col :xs="18" :sm="17" :md="16" :lg="15" :xl="15" class="buttonPosition">
-              <el-form-item>
-                <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
-                <el-button type="info" @click="resetForm('ruleForm')">重置</el-button>
-              </el-form-item>
-            </el-col>
-          </el-row>
-        </el-form>
-      </el-col>
-    </el-row>
+    <el-col :xs="5" :sm="8" :md="8" :lg="7" :xl="9" class="loginForm pa">
+      <h1>后台管理系统</h1>
+      <el-form label-position="left" :model="userInfo" :rules="rules" ref="ruleForm" size="medium">
+        <el-form-item prop="username">
+          <el-input
+            v-model="userInfo.username"
+            prefix-icon="iconfont iconuser_login"
+            clearable
+            placeholder="用户名"
+          ></el-input>
+        </el-form-item>
+        <el-form-item prop="password">
+          <el-input
+            v-model="userInfo.password"
+            prefix-icon="iconfont iconpass"
+            show-password
+            clearable
+            placeholder="密码"
+          ></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="submitForm('ruleForm')" size="medium">登录</el-button>
+          <el-checkbox v-model="checked">记住密码</el-checkbox>
+          <router-link class="registerStyle" to="/Register">忘记密码</router-link>
+          <router-link class="registerStyle" to="/Register">注册|</router-link>
+        </el-form-item>
+      </el-form>
+    </el-col>
   </div>
 </template>
 
 <script>
+import AMap from "AMap"; // 引入高德地图
 export default {
   data: function() {
     return {
+      checked: false,
       userInfo: {
-        name: "",
-        pass: ""
+        username: "",
+        password: ""
       },
       rules: {
-        name: [
+        username: [
           {
             required: true,
-            message: "请输入用户名",
-            trigger: "blur"
-          },
-          {
             min: 3,
             max: 5,
-            //message: '设置后不可更改，中英文均可，最长14个英文或7个汉字',
-            message: "用户名不存在,最长14个英文或7个汉字",
+            message: "长度在 3 到 5 个字符",
             trigger: "blur"
           }
         ],
-        pass: [
+        password: [
           {
             required: true,
-            message: "请输入密码",
-            trigger: "blur"
-          },
-          {
             min: 6,
-            max: 20,
-            //message: '支持6-20位的数字、字母、符号或任意组合',
-            message: "请6-20位的密码",
+            max: 16,
+            message: "长度在 6到 16个字符",
             trigger: "blur"
           }
         ]
       }
     };
   },
+  mounted() {
+    this.getLocation();
+  },
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate(async valid => {
         if (!valid) return false;
-        // const {
-        //     data: res
-        // } = await this.$http.post("login.e", this.userInfo)
-        // if(res.mess.statue!=200)return this.$message.error('用户名和密码不正确,请重新登录')
-        window.sessionStorage.setItem("token", "555555555");
-        this.$router.push("/Home");
+        const { data: res } = await this.$http.post(
+          "/LoginData",
+          this.$qs.stringify(this.userInfo)
+        );
+        console.log(res)
+        //if (res.statue != 200)
+        //return this.$message.error("用户名和密码不正确,请重新登录");
+        //window.sessionStorage.setItem("token", "555555555");
+        //this.$router.push("/Home");
       });
     },
-    resetForm(formName) {
-      this.$refs[formName].resetFields();
+
+    getLocation() {
+      const self = this;
+      AMap.plugin("AMap.Geolocation", function() {
+        var geolocation = new AMap.Geolocation({
+          // 是否使用高精度定位，默认：true
+          enableHighAccuracy: true,
+          // 设置定位超时时间，默认：无穷大
+          timeout: 10000
+        });
+
+        geolocation.getCurrentPosition();
+        AMap.event.addListener(geolocation, "complete", onComplete);
+        AMap.event.addListener(geolocation, "error", onError);
+
+        function onComplete(data) {
+          // data是具体的定位信息
+          console.log("定位成功信息：", data);
+        }
+
+        function onError(data) {
+          // 定位出错
+          console.log("定位失败错误：", data);
+          // 调用ip定位
+          self.getLngLatLocation();
+        }
+      });
+    },
+    getLngLatLocation() {
+      AMap.plugin("AMap.CitySearch", function() {
+        var citySearch = new AMap.CitySearch();
+        citySearch.getLocalCity(function(status, result) {
+          console.log(status, result);
+          if (status === "complete" && result.info === "OK") {
+            // 查询成功，result即为当前所在城市信息
+            console.log("通过ip获取当前城市：", result);
+            //逆向地理编码
+            AMap.plugin("AMap.Geocoder", function() {
+              var geocoder = new AMap.Geocoder({
+                // city 指定进行编码查询的城市，支持传入城市名、adcode 和 citycode
+                city: result.adcode
+              });
+
+              var lnglat = result.rectangle.split(";")[0].split(",");
+              geocoder.getAddress(lnglat, function(status, data) {
+                if (status === "complete" && data.info === "OK") {
+                  // result为对应的地理位置详细信息
+                  console.log(data);
+                }
+              });
+            });
+          }
+        });
+      });
     }
   }
 };
@@ -103,38 +142,45 @@ export default {
 
 <style lang="less" scoped>
 .loginConainer {
-  width: 100%;
-  height: 100%;
   background-image: url(../assets/img/login.jpg);
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-clip: border-box;
-}
-
-.loginbox,
-.loginConainer > div {
-  height: 100%;
-}
-
-.loginboxItem {
-  background: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 0.1rem;
-  box-shadow: 0px 0px 15px #545454;
-}
-
-h1 {
-  text-align: center;
-  color: #409eff;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  font-size: 30px;
-}
-
-.buttonPosition {
-  text-align: center;
+  background-size: 100% 100%; //不兼容ie8以下
+  .loginForm {
+    min-width: 440px;
+    background-color: rgba(255, 255, 255, 0.4);
+    //opacity: 0.5;
+    transform: translate(
+      -50%,
+      -50%
+    ); //CSS3 2D Transforms ie8一下不支持,9需要添加前缀
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    h1 {
+      padding: 10px 0;
+    }
+  }
+  .el-form {
+    width: 80%;
+    margin: auto;
+    & > div {
+      padding-bottom: 30px;
+    }
+    .el-form-item {
+      margin-bottom: 0;
+      text-align: left;
+    }
+    .el-button {
+      width: 120px;
+      margin: 0 30px 0 0;
+    }
+    .registerStyle {
+      float: right;
+      color: #ccc;
+      &:hover {
+        color: #409eff;
+      }
+    }
+  }
 }
 </style>

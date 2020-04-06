@@ -1,15 +1,15 @@
 import axios from 'axios'
 
-axios.defaults.baseURL = "http://127.0.0.1:8080/blog/"
-    // 请求头拦截
+axios.defaults.baseURL = "http://localhost:8080/blog/"
+
+// 请求头拦截
 axios.interceptors.request.use(config => {
-    //NProgress.start()
+    // 在发送请求之前做些什么
     config.headers.Authorization = window.sessionStorage.getItem('token')
     return config
-})
+}, function(error) {
+    // 对请求错误做些什么
+    return Promise.reject(error);
+});
 
-/**
- * 创建统一封装过的 axios 实例
- * @return {AxiosInstance}
- */
 export default axios

@@ -6,6 +6,90 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1016756",
+      "name": "电话",
+      "font_class": "phone",
+      "unicode": "e6dc",
+      "unicode_decimal": 59100
+    },
+    {
+      "icon_id": "1244194",
+      "name": "邮箱",
+      "font_class": "youxiang",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "1277596",
+      "name": "电话",
+      "font_class": "dianhua",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "1277601",
+      "name": "邮箱",
+      "font_class": "youxiang1",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "1391279",
+      "name": "电话",
+      "font_class": "dianhua1",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "2967254",
+      "name": "符号-电话",
+      "font_class": "dianhua2",
+      "unicode": "e729",
+      "unicode_decimal": 59177
+    },
+    {
+      "icon_id": "4361001",
+      "name": "邮箱",
+      "font_class": "youxiang2",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "5354204",
+      "name": "邮箱",
+      "font_class": "youxiang-",
+      "unicode": "e6af",
+      "unicode_decimal": 59055
+    },
+    {
+      "icon_id": "6756292",
+      "name": "电话",
+      "font_class": "dianhua3",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "7140587",
+      "name": "邮箱",
+      "font_class": "youxiang3",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "9974450",
+      "name": "邮箱",
+      "font_class": "youxiang4",
+      "unicode": "e70c",
+      "unicode_decimal": 59148
+    },
+    {
+      "icon_id": "13646837",
+      "name": "邮箱",
+      "font_class": "youxiang5",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
       "icon_id": "7827613",
       "name": "仪表盘",
       "font_class": "yibiaopan",

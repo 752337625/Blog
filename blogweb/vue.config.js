@@ -9,4 +9,10 @@ module.exports = {
         config.resolve.symlinks(true);
 
     },
+    configureWebpack: {
+        externals: {
+            'AMap': 'AMap' // 高德地图配置
+        }
+    },
+    transpileDependencies: [] // 需要编译的依赖包名
 }
