@@ -7,15 +7,15 @@
             <router-link to="/Home">后台管理系统</router-link>
           </el-col>
           <el-col>
-            <blog-header @ShowMenuListInfo="ShowMenuList"></blog-header>
+            <blog-header></blog-header>
           </el-col>
         </el-row>
       </el-header>
-      <el-container>
-        <el-aside width="200px">
-          <blog-aside :isCollapse="isCollapse"></blog-aside>
+      <el-container class="container">
+        <el-aside width="175px">
+          <blog-aside></blog-aside>
         </el-aside>
-        <router-view></router-view>
+        <el-main><router-view></router-view></el-main>
       </el-container>
     </el-container>
 
@@ -50,50 +50,55 @@ import blogHeader from "../components/pc_components/blogHeader";
 import blogAside from "../components/pc_components/blogAside";
 export default {
   data: function() {
-    return {
-      isCollapse: false
-    };
+    return {};
   },
   components: {
     blogHeader,
     blogAside
   },
-  methods: {
-    ShowMenuListInfo() {}
-  }
+  methods: {}
 };
 </script>
 
 <style lang="less" scoped>
 .homeContent {
- 
-  .el-aside{
-      overflow: hidden;
-      min-height: 700px;
-       height: 700px;
-      max-height: 800px;
+  .el-aside {
+    overflow: hidden;
+    min-height: 700px;
+    height: 700px;
+    max-height: 800px;
+  }
+  .container{
+    margin-top: 45px;
+    .el-main{
+      padding: 0;
     }
+  }
   .el-header {
     padding: 0;
-    background-color: #001529;
+    background-color: rgb(38, 50, 56);
     height: 45px !important;
     border-bottom: 2px solid #2fb9d4;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 3000;
     .el-row {
       width: 100%;
       height: 100%;
     }
-    
     .el-row > div {
       height: 100%;
       &:first-child {
-        width: 200px;
-        min-width: 200px;
+        width: 176px;//添加border 1 px
+        min-width: 176px;
         border-right: 1px solid #2fb9d4;
         text-align: center;
         line-height: 45px;
       }
       &:last-child {
         min-width: 568px;
+        
       }
     }
   }

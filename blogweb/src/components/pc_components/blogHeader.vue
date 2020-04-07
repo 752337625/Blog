@@ -34,7 +34,6 @@ export default {
   data: function() {
     return {
       visible: false,
-      isCollapse: false,
       userInfo: {
         name: "王宏伟",
         age: 36,
@@ -58,12 +57,6 @@ export default {
   },
   methods: {
     showCard(mess) {
-      //console.log(1)
-      if (mess == "menuListInfo") {
-        this.$emit("ShowMenuListInfo", !this.isCollapse); //自定义事件  传递值“子向父组件传值”
-        this.isCollapse = !this.isCollapse;
-        return;
-      }
       this.visible = !this.visible;
       this.client.clientX = event.clientX - event.offsetX + "px";
       this.client.clientY = "50px";

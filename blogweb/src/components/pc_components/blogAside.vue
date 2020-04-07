@@ -4,7 +4,6 @@
       default-active="/odometer"
       :collapse-transition="true"
       :unique-opened="true"
-      :collapse="isCollapse"
       background-color="#263238"
       text-color="#fff"
       active-text-color="#ffd04b"
@@ -29,7 +28,6 @@
 
 <script>
 export default {
-  props: ["isCollapse"],
   data: function() {
     return {
       menuItem: [
