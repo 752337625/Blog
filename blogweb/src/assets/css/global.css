@@ -124,13 +124,14 @@ body,
 #app,
 .loginConainer,
 .registerConainer,
-.homeContent {
+.homeContent,
+.blogHeadConainer {
     height: 100%;
     width: 100%;
     overflow: hidden;
     /* 不兼容ie: 6; */
     min-width: 768px;
-    background-color: #fff;
+    background-color: #E7EAED;
 }
 
 .el-form-item__error {

@@ -1,5 +1,5 @@
 <template>
-  <div class="mainConainer" >
+  <div class="mainConainer">
     <el-row class="row-margin">
       <el-card class>
         <div>
@@ -32,7 +32,7 @@
     </el-row>
     <el-row type="flex" justify="flex-between">
       <el-row style="flex:0.5">
-        <el-card class >
+        <el-card class>
           <div>
             <strong>服务</strong>
             <el-divider></el-divider>
@@ -52,7 +52,7 @@
             <el-divider></el-divider>
           </div>
         </el-card>
-        <el-card class style="flex:0.5;height: 500px;"  >
+        <el-card class style="flex:0.5;height: 500px;">
           <div>
             <strong>开发者新闻</strong>
             <el-divider></el-divider>
@@ -82,7 +82,7 @@ export default {
 
 <style lang="less" scoped>
 .mainConainer {
-    background-color: #E7EAED;
+  width: 100%;
 }
 
 .el-divider {

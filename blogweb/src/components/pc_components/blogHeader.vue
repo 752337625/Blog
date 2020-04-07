@@ -2,18 +2,18 @@
   <div class="blogHeadConainer">
     <el-row type="flex" justify="space-between">
       <el-row type="flex">
-        <el-col >
+        <el-col>
           <i class="iconfont iconmianbaoxie" @click="showCard('menuListInfo')"></i>
         </el-col>
         <el-col>
-          <i class="iconfont iconnotificationbellring"  @click="showCard('messageInfo')"></i>
+          <i class="iconfont iconnotificationbellring" @click="showCard('messageInfo')"></i>
         </el-col>
-        <el-col >
+        <el-col>
           <i class="iconfont iconicon-" @click="showCard('menuInfo')"></i>
         </el-col>
       </el-row>
       <el-row type="flex">
-        <el-col  style="border-left: 1px solid rgba(0, 0, 0, 0.05);">
+        <el-col style="border-left: 1px solid rgba(0, 0, 0, 0.05);">
           <i class="iconfont icon24gl-portraitMale" @click="showCard('userInfo')"></i>
         </el-col>
         <el-col>
@@ -54,7 +54,7 @@ export default {
     };
   },
   components: {
-     blogHeadCard
+    blogHeadCard
   },
   methods: {
     showCard(mess) {
@@ -75,26 +75,24 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.iconfont {
-  color: #758697;
+.blogHeadConainer {
+   background-color: #fff;
+  div {
+    height: 100%;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    div div{
+      width: 50px;
+    }
+  }
+  .iconfont {
+    color: #758697;
+    font-size: 30px;
+    line-height: 45px;
+    display: block;
+    text-align: center;
+    &:hover{
+      cursor: pointer;
+    }
+  }
 }
-.blogHeadConainer,
-.blogHeadConainer > div,
-i {
-  height: 100%;
-}
-.blogHeadConainer > div > div div {
-  width: 50px;
-  border-right: 1px solid rgba(0, 0, 0, 0.05);
-  text-align: center;
-}
-.iconfont {
-  font-size: 30px;
-  display: block;
-  line-height: 45px;
-}
-.iconfont:hover {
-  cursor: pointer;
-}
-
 </style>

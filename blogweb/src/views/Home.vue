@@ -7,13 +7,15 @@
             <router-link to="/Home">后台管理系统</router-link>
           </el-col>
           <el-col>
-            <div></div>
+            <blog-header @ShowMenuListInfo="ShowMenuList"></blog-header>
           </el-col>
         </el-row>
       </el-header>
       <el-container>
-        <el-aside width="200px"></el-aside>
-        <el-main>Main</el-main>
+        <el-aside width="200px">
+          <blog-aside :isCollapse="isCollapse"></blog-aside>
+        </el-aside>
+        <router-view></router-view>
       </el-container>
     </el-container>
 
@@ -44,25 +46,43 @@
 </template>
 
 <script>
+import blogHeader from "../components/pc_components/blogHeader";
+import blogAside from "../components/pc_components/blogAside";
 export default {
   data: function() {
-    return {};
+    return {
+      isCollapse: false
+    };
   },
-  components: {},
-  methods: {}
+  components: {
+    blogHeader,
+    blogAside
+  },
+  methods: {
+    ShowMenuListInfo() {}
+  }
 };
 </script>
 
 <style lang="less" scoped>
 .homeContent {
+ 
+  .el-aside{
+      overflow: hidden;
+      min-height: 700px;
+       height: 700px;
+      max-height: 800px;
+    }
   .el-header {
     padding: 0;
     background-color: #001529;
-    // height: 45px !important;
+    height: 45px !important;
+    border-bottom: 2px solid #2fb9d4;
     .el-row {
       width: 100%;
       height: 100%;
     }
+    
     .el-row > div {
       height: 100%;
       &:first-child {
@@ -70,7 +90,7 @@ export default {
         min-width: 200px;
         border-right: 1px solid #2fb9d4;
         text-align: center;
-        line-height: 60px;
+        line-height: 45px;
       }
       &:last-child {
         min-width: 568px;

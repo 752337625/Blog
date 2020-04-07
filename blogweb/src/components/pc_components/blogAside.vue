@@ -2,7 +2,7 @@
   <div class="blogAsideConainer">
     <el-menu
       default-active="/odometer"
-      :collapse-transition="false"
+      :collapse-transition="true"
       :unique-opened="true"
       :collapse="isCollapse"
       background-color="#263238"
@@ -39,9 +39,24 @@ export default {
           icon: "el-icon-odometer",
           children: []
         },
-        { index: "/1", text: "菜单管理", icon: "el-icon-odometer", children: [] },
-        { index: "/2", text: "广告管理", icon: "el-icon-odometer", children: [] },
-        { index: "/3", text: "留言管理", icon: "el-icon-odometer", children: [] },
+        {
+          index: "/1",
+          text: "菜单管理",
+          icon: "el-icon-odometer",
+          children: []
+        },
+        {
+          index: "/2",
+          text: "广告管理",
+          icon: "el-icon-odometer",
+          children: []
+        },
+        {
+          index: "/3",
+          text: "留言管理",
+          icon: "el-icon-odometer",
+          children: []
+        },
         {
           index: "/6",
           text: "文章管理",
@@ -93,9 +108,16 @@ export default {
           text: "博主管理",
           icon: "el-icon-user-solid",
           children: [
-              { index: "/blogUserAdd", text: "博主新增", icon: "el-icon-user-solid" },
-              { index: "/blogUserList", text: "博主列表", icon: "el-icon-user-solid" },
-           
+            {
+              index: "/blogUserAdd",
+              text: "博主新增",
+              icon: "el-icon-user-solid"
+            },
+            {
+              index: "/blogUserList",
+              text: "博主列表",
+              icon: "el-icon-user-solid"
+            }
           ]
         }
       ]
@@ -114,6 +136,12 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.blogAsideConainer {
+  height: 100%;
+  .el-menu {
+    height: 100%;
+  }
+}
 .el-submenu .el-menu-item {
   min-width: auto;
 }

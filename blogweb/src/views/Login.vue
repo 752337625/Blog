@@ -72,10 +72,10 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(async valid => {
         if (!valid) return false;
-        const { data: res } = await this.$http.post(
-          "/LoginData",
-          this.$qs.stringify(this.userInfo)
-        );
+        // const { data: res } = await this.$http.post(
+        //   "/LoginData",
+        //   this.$qs.stringify(this.userInfo)
+        // );
         //if (res.statue != 200) return this.$message.error(res.message);
         window.sessionStorage.setItem("token", "555555555");
         this.$router.push("/Home");
