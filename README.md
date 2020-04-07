@@ -28,3 +28,6 @@ blog系统
 查看有哪些分支,以及所处的分支(带*好)
 #git merge login
 当前分支代码,合并login分支代码
+#git reset --hard FETCH_HEAD
+如果本地和远程有冲突,以远程为主.使用git reset --hard FETCH_HEAD去掉冲突在pull本地
+
