@@ -23,7 +23,6 @@ Vue.prototype.$http = axios
 Vue.prototype.$qs = qs
 Vue.prototype.$fontRate = fontRate
 Vue.config.productionTip = false
-
 new Vue({
     router,
     render: h => h(App)
