@@ -1,4 +1,4 @@
-package bonc.com.cn.config;
+package bonc.com.cn.realm;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;

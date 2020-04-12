@@ -2,46 +2,17 @@
   <div class="homeContent">
     <el-container>
       <el-header>
-        <el-row type="flex">
-          <el-col>
-            <router-link to="/Home">后台管理系统</router-link>
-          </el-col>
-          <el-col>
-            <blog-header></blog-header>
-          </el-col>
-        </el-row>
+        <blog-header></blog-header>
       </el-header>
       <el-container class="container">
-        <el-aside width="175px">
+        <el-aside width="201px">
           <blog-aside></blog-aside>
         </el-aside>
-        <el-main><router-view></router-view></el-main>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
-
-    <!-- <el-container>
-      <el-row type="flex" class="rowPosition">
-        <el-col :md="4" :lg="3" :xl="3" class="hidden-sm-and-down">
-          <el-row type="flex" class="blogger" align="middle">
-            <div>
-              <i class="iconfont iconblogger"></i>
-            </div>
-            <div>
-              <p>Blog</p>
-            </div>
-          </el-row>
-          <blog-aside :isCollapse="isCollapse"></blog-aside>
-        </el-col>
-        <el-col :xs="24" :sm="24" :md="20" :lg="21" :xl="21" class="headerPosition">
-          <el-header style="height:45px;" class="header">
-            <blog-header @ShowMenuListInfo="ShowMenuList"></blog-header>
-          </el-header>
-          <el-main>
-           <router-view></router-view>
-          </el-main>
-        </el-col>
-      </el-row>
-    </el-container>-->
   </div>
 </template>
 
@@ -56,51 +27,40 @@ export default {
     blogHeader,
     blogAside
   },
-  methods: {}
+  mounted() {
+    //console.log( this.$http.post("/Login"))
+  },
+  methods: {
+    async logout() {
+      const { data: res } = await this.$http.get("/logout");
+      if (res.statue != 200) return this.$message.error(res.message);
+      this.$router.push("/Login");
+    }
+  }
 };
 </script>
 
 <style lang="less" scoped>
 .homeContent {
-  .el-aside {
-    overflow: hidden;
-    min-height: 700px;
-    height: 700px;
-    max-height: 800px;
-  }
-  .container{
-    margin-top: 45px;
-    .el-main{
-      padding: 0;
-    }
-  }
   .el-header {
-    padding: 0;
-    background-color: rgb(38, 50, 56);
     height: 45px !important;
-    border-bottom: 2px solid #2fb9d4;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 3000;
-    .el-row {
-      width: 100%;
-      height: 100%;
-    }
-    .el-row > div {
-      height: 100%;
-      &:first-child {
-        width: 176px;//添加border 1 px
-        min-width: 176px;
-        border-right: 1px solid #2fb9d4;
-        text-align: center;
-        line-height: 45px;
-      }
-      &:last-child {
-        min-width: 568px;
-        
-      }
-    }
+    background-color: #001529;
+    padding: 0;
+    border-bottom: 3px solid #2fb9d4;
   }
+   .el-container{
+     height: 100%;
+     .el-aside {
+    overflow: hidden;
+    height: 100%;
+  }
+  .el-main{
+    padding: 10px 10px 10px 10px;
+        background: #fff;
+  }
+
+  }
+  
 }
+
 </style>

@@ -1,12 +1,14 @@
 import axios from 'axios'
 
 axios.defaults.baseURL = "http://localhost:8080/blog/"
+    //axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+    //axios.defaults.headers.get['Content-Type'] = 'application/x-www-form-urlencoded';
 
 // 请求头拦截
-axios.interceptors.request.use(config => {
+axios.interceptors.request.use(response => {
     // 在发送请求之前做些什么
-    config.headers.Authorization = window.sessionStorage.getItem('token')
-    return config
+    //config.headers.Authorization = window.sessionStorage.getItem('token')
+    return response
 }, function(error) {
     // 对请求错误做些什么
     return Promise.reject(error);

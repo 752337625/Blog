@@ -6,6 +6,7 @@ import Home from '../views/Home'
 import BlogOdometer from '../components/pc_components/pc_main_small_components/blogOdometer'
 import BlogUser from '../components/pc_components/pc_main_small_components/blogUser'
 import BlogUserAdd from '../components/pc_components/pc_main_small_components/blogUserAdd'
+import BlogLocationMap from '../components/pc_components/pc_main_small_components/blogLocationMap'
 
 
 
@@ -41,6 +42,9 @@ const routes = [{
             }, {
                 path: '/blogUserList',
                 component: BlogUser
+            }, {
+                path: '/locationMap',
+                component: BlogLocationMap
             },
 
 
@@ -54,7 +58,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     if (to.path === '/Login') return next()
     if (to.path === '/Register') return next()
-    const tokenStr = window.sessionStorage.getItem('token')
+    let tokenStr = 5
     if (!tokenStr) return next('/Login')
     next()
 })

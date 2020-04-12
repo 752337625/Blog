@@ -22,7 +22,7 @@
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="submitForm('ruleForm')" size="medium">登录</el-button>
-          <el-checkbox v-model="checked">记住密码</el-checkbox>
+          <el-checkbox v-model="rememberMe">记住密码</el-checkbox>
           <router-link class="registerStyle" to="/Register">忘记密码</router-link>
           <router-link class="registerStyle" to="/Register">注册|</router-link>
         </el-form-item>
@@ -36,12 +36,12 @@ import AMap from "AMap"; // 引入高德地图
 export default {
   data: function() {
     return {
-      checked: false,
+       rememberMe:true,
       userInfo: {
         userName: "",
         password: "",
         IP: returnCitySN["cip"],
-        address:''
+        address:'',
       },
       rules: {
         userName: [
@@ -71,13 +71,12 @@ export default {
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate(async valid => {
-        if (!valid) return false;
-        // const { data: res } = await this.$http.post(
-        //   "/LoginData",
-        //   this.$qs.stringify(this.userInfo)
-        // );
-        //if (res.statue != 200) return this.$message.error(res.message);
-        window.sessionStorage.setItem("token", "555555555");
+        // if (!valid) return false;
+        //  const { data: res } = await this.$http.post(
+        //    "/LoginData?rememberMe="+this.rememberMe,
+        //    this.$qs.stringify(this.userInfo)
+        //  );
+        // if (res.statue != 200) return this.$message.error(res.message);
         this.$router.push("/Home");
       });
     },
@@ -103,8 +102,9 @@ export default {
       });
     },
     onComplete(data,_this) {
+      let lngat=(data.position.lng+','+data.position.lat).split(',')
       var geocoder = new AMap.Geocoder({ city: "010", radius: 1000});
-      geocoder.getAddress(["116.47377", "40.02151"], function(status, result) {
+      geocoder.getAddress(lngat, function(status, result) {
         if (status === "complete" && result.regeocode) {
           _this.userInfo.address=result.regeocode.formattedAddress;
         } else {
@@ -124,14 +124,13 @@ export default {
   background-image: url(../assets/img/login.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%; //不兼容ie8以下
+  position: relative;
   .loginForm {
+    position: absolute;
     min-width: 440px;
     background-color: rgba(255, 255, 255, 0.4);
     //opacity: 0.5;
-    transform: translate(
-      -50%,
-      -50%
-    ); //CSS3 2D Transforms ie8一下不支持,9需要添加前缀
+    transform: translate( -50%,-50% ); //CSS3 2D Transforms ie8一下不支持,9需要添加前缀
     top: 50%;
     left: 50%;
     text-align: center;

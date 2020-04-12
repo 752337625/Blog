@@ -3,8 +3,6 @@ package bonc.com.cn.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -16,39 +14,37 @@ import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import bonc.com.cn.entity.User;
-import bonc.com.cn.server.LoginServer;
 
 @Controller
 @RequestMapping("/blog")
 public class LoginController {
 	
-	@PersistenceContext
-	private EntityManager entityManager;
 	
-	@Autowired
-	private LoginServer loginServer;
 
+	@PostMapping("/Login")
 	@ResponseBody
-	@RequestMapping("/Login")
 	public String LoginView() {
-		return "index";
+		
+		
+		
+		return "1";
 	}
 
 	@ResponseBody
 	@PostMapping("/LoginData")
-	public Map<String, Object> UserLogin(User user) {
+	public Map<String, Object> UserLogin(User user,boolean rememberMe) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		// 从SecurityUtils里边创建一个 subject
 		Subject subject = SecurityUtils.getSubject();
 		// 在认证提交前准备 token（令牌）
-		UsernamePasswordToken token = new UsernamePasswordToken(user.getUserName(),user.getPassword());
+		UsernamePasswordToken token = new UsernamePasswordToken(user.getUserName(),user.getPassword(),rememberMe);
 		try {
 			// 执行认证登陆
 			subject.login(token);
@@ -88,13 +84,30 @@ public class LoginController {
 			map.put("statue", 400);
 			map.put("success", false);
 		}
-		User findByUserName = loginServer.findByUserName(user.getUserName());
-		subject.getSession().setAttribute("salt", findByUserName.getSalt());
-		map.put("mess", "登录成功");
+		User User= (User) subject.getPrincipal();
+		map.put("message", "登录成功");
 		map.put("statue", 200);
 		map.put("success", true);
-		map.put("data", findByUserName);
+		map.put("data", User);
 		return map;
 	}
+	 /**
+     * 登出  这个方法没用到,用的是shiro默认的logout
+     * @param session
+     * @param model
+     * @return
+     */
+	@ResponseBody
+	@GetMapping("/logout")
+    public Map<String, Object> logout() {
+    	Map<String, Object> map = new HashMap<String, Object>();
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
+        map.put("message", "登出成功");
+		map.put("statue", 200);
+		map.put("success", true);
+		map.put("data", "登出成功");
+        return map;
+    }
 
 }

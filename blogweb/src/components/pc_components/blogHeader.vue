@@ -1,28 +1,29 @@
 <template>
   <div class="blogHeadConainer">
-    <el-row type="flex" justify="space-between">
-      <el-row type="flex">
-        <el-col>
+    <el-row>
+      <ul>
+        <li>
+          <router-link to="/Home">后台管理系统</router-link>
+        </li>
+        <li>
           <i class="iconfont iconmianbaoxie" @click="showCard('menuListInfo')"></i>
-        </el-col>
-        <el-col>
-          <i class="iconfont iconnotificationbellring" @click="showCard('messageInfo')"></i>
-        </el-col>
-        <el-col>
+        </li>
+        <li>
+          <i class="iconfont iconnotificationbellring" @click="showCard('menuInfo')"></i>
+        </li>
+        <li>
           <i class="iconfont iconicon-" @click="showCard('menuInfo')"></i>
-        </el-col>
-      </el-row>
-      <el-row type="flex">
-        <el-col style="border-left: 1px solid rgba(0, 0, 0, 0.05);">
-          <i class="iconfont icon24gl-portraitMale" @click="showCard('userInfo')"></i>
-        </el-col>
-        <el-col>
-          <i class="iconfont iconmianbaoxie"></i>
-        </el-col>
-        <el-col style="border-left: 0;">
+        </li>
+        <li>
           <i class="iconfont icondots-vertical"></i>
-        </el-col>
-      </el-row>
+        </li>
+        <li>
+          <i class="iconfont iconmianbaoxie"></i>
+        </li>
+        <li>
+          <i class="iconfont icon24gl-portraitMale" @click="showCard('userInfo')"></i>
+        </li>
+      </ul>
     </el-row>
     <blogHeadCard v-show="visible" :info="info" :client="client"></blogHeadCard>
   </div>
@@ -69,23 +70,66 @@ export default {
 
 <style lang="less" scoped>
 .blogHeadConainer {
-   background-color: #fff;
-  div {
-    height: 100%;
-    border-right: 1px solid rgba(0, 0, 0, 0.05);
-    div div{
-      width: 50px;
-    }
-  }
-  .iconfont {
-    color: #758697;
-    font-size: 30px;
+  background-color: #001529;
+  ul {
+    width: 100%;
+    height: 45px;
     line-height: 45px;
-    display: block;
-    text-align: center;
-    &:hover{
-      cursor: pointer;
+    li:not(:first-child) {
+      width: 50px;
+      text-align: center;
+    }
+    li {
+      float: left;
+      border-right: 1px solid #2fb9d4;
+      a {
+        color: #ffffff;
+      }
+      &:first-child {
+        width: 174px;
+        font-size: 18px;
+        font-weight: 700;
+        padding-left: 26px;
+      }
+      &:nth-last-child(2) {
+        float: right;
+      }
+      &:nth-last-child(3) {
+        border-right: 1px solid #2fb9d4;
+        float: right;
+      }
+      &:last-child {
+        float: right;
+        border-left: 1px solid #2fb9d4;
+      }
+      .iconfont {
+        color: #ffffff;
+        font-size: 25px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
   }
 }
+// .blogHeadConainer {
+//    background-color: #fff;
+//   div {
+//     height: 100%;
+//     border-right: 1px solid rgba(0, 0, 0, 0.05);
+//     div div{
+//       width: 50px;
+//     }
+//   }
+//   .iconfont {
+//     color: #758697;
+//     font-size: 30px;
+//     line-height: 45px;
+//     display: block;
+//     text-align: center;
+//     &:hover{
+//       cursor: pointer;
+//     }
+//   }
+// }
 </style>

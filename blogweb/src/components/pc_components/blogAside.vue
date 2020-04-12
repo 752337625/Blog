@@ -4,9 +4,9 @@
       default-active="/odometer"
       :collapse-transition="true"
       :unique-opened="true"
-      background-color="#263238"
+      background-color="#001529"
       text-color="#fff"
-      active-text-color="#ffd04b"
+      active-text-color="#409EFF"
       style="border: 0;"
       router
     >
@@ -57,25 +57,14 @@ export default {
         },
         {
           index: "/6",
-          text: "文章管理",
+          text: "地图",
           icon: "el-icon-document",
           children: [
-            { index: "/addBlog", text: "新增文章", icon: "el-icon-document" },
             {
-              index: "/listOperationBlog",
-              text: "文章列表",
+              index: "/locationMap",
+              text: "当前位置",
               icon: "el-icon-document"
             },
-            {
-              index: "/7",
-              text: "文章列表",
-              icon: "el-icon-document"
-            },
-            {
-              index: "/8",
-              text: "文章列表",
-              icon: "el-icon-document"
-            }
           ]
         },
         {
@@ -136,11 +125,13 @@ export default {
 <style lang="less" scoped>
 .blogAsideConainer {
   height: 100%;
-  .el-menu {
-    height: 100%;
-  }
+  border-right: 1px solid #2fb9d4;
+  background-color: rgb(0, 21, 41);
+  // .el-menu {
+  //   height: 100%;
+  // }
 }
-.el-submenu .el-menu-item {
-  min-width: auto;
-}
+// .el-submenu .el-menu-item {
+//   min-width: auto;
+// }
 </style>

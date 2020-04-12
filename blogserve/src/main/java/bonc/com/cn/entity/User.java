@@ -1,5 +1,6 @@
 package bonc.com.cn.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -21,7 +22,12 @@ import lombok.Data;
 @Data
 @Entity(name = "blog_user")
 @EntityListeners(AuditingEntityListener.class)
-public class User {
+public class User implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5842946297474313728L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -81,6 +87,12 @@ public class User {
 	 */
 	@Column(columnDefinition = "varchar(50) COMMENT '初次登录IP'")
 	private String IP;
+	
+	/**
+	 * 个人描述
+	 */
+	@Column(columnDefinition = "varchar(500) COMMENT '个人描述'")
+	private String desc;
 	
 	/**
 	 * 盐值

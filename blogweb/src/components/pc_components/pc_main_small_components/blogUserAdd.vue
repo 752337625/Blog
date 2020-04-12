@@ -9,41 +9,27 @@
         label-width="120px"
         class="demo-ruleForm"
       >
-        <el-col :span="12">
-          <el-form-item label="用户名" prop="name">
-            <el-col :span="11">
-              <el-input v-model="ruleForm.name"></el-input>
+        <el-col :span="24">
+          <el-form-item label="用户名" prop="userName">
+            <el-col :span="15">
+              <el-input v-model="ruleForm.userName"></el-input>
             </el-col>
           </el-form-item>
-          <el-form-item label="密码" prop="pass" show-password>
-            <el-col :span="11">
-              <el-input v-model="ruleForm.name"></el-input>
+          <el-form-item label="密码" prop="password" show-password>
+            <el-col :span="15">
+              <el-input v-model="ruleForm.password"></el-input>
             </el-col>
           </el-form-item>
-            <el-form-item label="邮箱" prop="name">
-            <el-col :span="11">
-              <el-input v-model="ruleForm.name"></el-input>
+            <el-form-item label="邮箱" prop="email">
+            <el-col :span="15">
+              <el-input v-model="ruleForm.email"></el-input>
             </el-col>
           </el-form-item>
-             <el-form-item label="电话" prop="name">
-            <el-col :span="11">
-              <el-input v-model="ruleForm.name"></el-input>
+             <el-form-item label="电话" prop="telephone">
+            <el-col :span="15">
+              <el-input v-model="ruleForm.telephone"></el-input>
             </el-col>
           </el-form-item>
-          <el-form-item label="创建时间" required>
-            <el-col :span="11">
-              <el-form-item prop="date1">
-                <el-date-picker
-                  type="datetime"
-                  placeholder="选择日期"
-                  v-model="ruleForm.date1"
-                  style="width: 100%;"
-               
-                ></el-date-picker>
-              </el-form-item>
-            </el-col>
-          </el-form-item>
-
           <!--   <el-form-item label="帐号状态" prop="delivery">
           <el-switch v-model="ruleForm.delivery"></el-switch>
           </el-form-item>-->
@@ -53,8 +39,8 @@
             <el-option label="可用" value="beijing"></el-option>
           </el-select>
           </el-form-item>-->
-          <el-form-item label="用户活跃状态" prop="region">
-            <el-col :span="11">
+          <!-- <el-form-item label="用户活跃状态" prop="region">
+            <el-col :span="15">
               <el-select v-model="ruleForm.region" placeholder="请选择用户活跃状态">
                 <el-option label="新增" value="new"></el-option>
                 <el-option label="活跃" value="active"></el-option>
@@ -63,14 +49,18 @@
                 <el-option label="流失" value="loss"></el-option>
               </el-select>
             </el-col>
-          </el-form-item>
-
-          <el-form-item label="帐号状态" prop="delivery">
-            <el-col :span="11">
-              <el-switch v-model="ruleForm.delivery"></el-switch>
+          </el-form-item> -->
+          <el-form-item label="帐号状态" prop="enabled">
+            <el-col :span="15">
+              <el-switch v-model="ruleForm.enabled"></el-switch>
             </el-col>
           </el-form-item>
-          <el-form-item label="爱好" prop="type">
+           <el-form-item label="帐号是否被锁定" prop="locked">
+            <el-col :span="15">
+              <el-switch v-model="ruleForm.locked"></el-switch>
+            </el-col>
+          </el-form-item>
+          <!-- <el-form-item label="爱好" prop="type">
             <el-col :span="24">
               <el-checkbox-group v-model="ruleForm.type">
                 <el-checkbox label="运动类" name="type"></el-checkbox>
@@ -85,7 +75,7 @@
                 <el-checkbox label="返老还童类" name="type"></el-checkbox>
               </el-checkbox-group>
             </el-col>
-          </el-form-item>
+          </el-form-item> -->
           <!-- <el-form-item label="特殊资源" prop="resource">
           <el-radio-group v-model="ruleForm.resource">
             <el-radio label="线上品牌商赞助"></el-radio>
@@ -93,12 +83,12 @@
           </el-radio-group>
           </el-form-item>-->
           <el-form-item label="个人描述" prop="desc">
-            <el-col :span="24">
+            <el-col :span="15">
               <el-input type="textarea" v-model="ruleForm.desc" maxlength="30"></el-input>
             </el-col>
           </el-form-item>
           <el-form-item>
-            <el-col :span="11">
+            <el-col :span="15">
               <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
               <el-button @click="resetForm('ruleForm')">重置</el-button>
             </el-col>
@@ -120,15 +110,16 @@ export default {
         LevelTwoto: "新增用户"
       },
       ruleForm: {
-        name: "",
-        pass: "",
-        region: "",
-        date1: "",
-        date2: "",
-        delivery: true,
-        type: [],
-        resource: "",
-        desc: ""
+        userName: "",
+        password: "",
+        enabled: "",
+        clause:  true,
+        locked:  true,
+        telephone:"",
+        email:"",
+        desc: "",
+        address:"",
+        IP:""
       },
       rules: {
         name: [
