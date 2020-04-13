@@ -14,6 +14,7 @@ export default {
         LevelTwoto: "当前定位"
       },
       map: null
+      // 信息窗体的内容
     };
   },
   components: {
@@ -23,18 +24,20 @@ export default {
     this.initMap();
   },
   methods: {
-    plugin() {
-      return;
-    },
     initMap() {
       var _this = this;
       _this.map = new AMap.Map("mainConainer", {
         resizeEnable: true, //是否监控地图容器尺寸变化
         zoom: 11, //初始化地图层级
-        center: [116.397428, 39.90923] //初始化地图中心点
       });
       AMap.plugin(
-        ["AMap.ToolBar", "AMap.Scale", "AMap.MapType", "AMap.Geolocation"],
+        [
+          "AMap.ToolBar",
+          "AMap.Scale",
+          "AMap.MapType",
+          "AMap.Weather",
+          "AMap.Geolocation"
+        ],
         function() {
           // 在图面添加工具条控件，工具条控件集成了缩放、平移、定位等功能按钮在内的组合控件
           _this.map.addControl(new AMap.ToolBar());
@@ -42,7 +45,8 @@ export default {
           _this.map.addControl(new AMap.Scale());
           // 在图面添加类别切换控件，实现默认图层与卫星图、实施交通图层之间切换的控制
           _this.map.addControl(new AMap.MapType());
-
+          //创建天气查询实例
+          var weather = new AMap.Weather();
           var geolocation = new AMap.Geolocation({
             enableHighAccuracy: true, //是否使用高精度定位，默认:true
             timeout: 10000, //超过10秒后停止定位，默认：5s
@@ -53,7 +57,7 @@ export default {
           _this.map.addControl(geolocation);
           geolocation.getCurrentPosition(function(status, result) {
             if (status == "complete") {
-              _this.onComplete(result, _this);
+              _this.onComplete(result, _this, weather);
             } else {
               _this.onError(result);
             }
@@ -64,11 +68,18 @@ export default {
         _this.$message.success("创建地图成功");
       });
     },
-    onComplete(data, _this) {
+    onComplete(data, _this, weather) {
       let lngat = (data.position.lng + "," + data.position.lat).split(",");
       var geocoder = new AMap.Geocoder({ city: "010", radius: 1000 });
       geocoder.getAddress(lngat, function(status, result) {
         if (status === "complete" && result.regeocode) {
+          //执行实时天气信息查询
+          weather.getForecast(
+            result.regeocode.addressComponent.province,
+            function(err, data) {
+              console.log(err, data);
+            }
+          );
         } else {
         }
       });

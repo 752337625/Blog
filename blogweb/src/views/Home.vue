@@ -8,7 +8,7 @@
         <el-aside width="201px">
           <blog-aside></blog-aside>
         </el-aside>
-        <el-main>
+        <el-main :style="{width:width}">
           <router-view></router-view>
         </el-main>
       </el-container>
@@ -21,13 +21,16 @@ import blogHeader from "../components/pc_components/blogHeader";
 import blogAside from "../components/pc_components/blogAside";
 export default {
   data: function() {
-    return {};
+    return {
+      width:'100%',
+    };
   },
   components: {
     blogHeader,
     blogAside
   },
   mounted() {
+    this.width=document.getElementsByClassName('el-main')[0].clientWidth-201+'px'
     //console.log( this.$http.post("/Login"))
   },
   methods: {
@@ -53,10 +56,14 @@ export default {
      .el-aside {
     overflow: hidden;
     height: 100%;
+     float: left;
   }
   .el-main{
+    //width: 100%;
+    float:right;
+    height: 100%;
     padding: 10px 10px 10px 10px;
-        background: #fff;
+       // background: #fff;
   }
 
   }

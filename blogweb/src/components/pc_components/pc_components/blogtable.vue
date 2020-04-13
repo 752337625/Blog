@@ -1,5 +1,5 @@
 <template>
-  <div class="tableHigth">
+  <div class="tableHigth" :style="{height:(tableInfo.height-90)+'px'}">
     <el-table :data="tableInfo.tableData" style="width: 100%" border height="100%">
       <el-table-column
         v-for="(param,key) in tableInfo.tableParam"
@@ -16,6 +16,7 @@
         </template>
       </el-table-column>
     </el-table>
+    <el-pagination background layout="prev, pager, next" :total="1000"></el-pagination>
   </div>
 </template>
 <script>
@@ -24,10 +25,16 @@ export default {
   data: function() {
     return {};
   },
+  mounted() {},
   components: {},
   methods: {}
 };
 </script>
 
 <style lang="less" scoped>
+.el-pagination {
+  padding-top: 12px;
+  padding-bottom: 10px;
+  float: right;
+}
 </style>

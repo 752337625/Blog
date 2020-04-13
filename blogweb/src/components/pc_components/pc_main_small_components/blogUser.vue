@@ -4,7 +4,6 @@
     <CardUserList :tableInfo="tableInfo"></CardUserList>
   </div>
 </template>
-
 <script>
 import Breadcrumb from "../pc_components/breadcrumb";
 import CardUserList from "../pc_components/cardUserList";
@@ -52,8 +51,135 @@ export default {
             role: "超级管理员,普通管理员",
             IP: "127.16.10.11",
             state: "新增"
-          }
-        ]
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },{
+            name: "王小虎",
+            createDate: "2016-05-02",
+            address: "上海市普陀区金沙江路 1518 弄",
+            role: "超级管理员,普通管理员",
+            IP: "127.16.10.11",
+            state: "新增"
+          },
+        ],
+        height:'400',
       }
        
     };
@@ -62,6 +188,9 @@ export default {
     Breadcrumb,
     CardUserList
   },
+  mounted(){
+   this.tableInfo.height=(document.getElementsByClassName('mainConainer')[0].clientHeight-50);
+  },
   methods: {
    
   }
@@ -69,4 +198,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
+
 </style>

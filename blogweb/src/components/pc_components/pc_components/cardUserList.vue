@@ -1,8 +1,8 @@
 <template>
-  <div class="cardClass">
-    <el-form :inline="true" :model="formInline" class="demo-form-inline">
+  <div class="cardClass" :style="{height:tableInfo.height+'px'}">
+    <el-form :inline="true" :model="formInline" class="demo-form-inline" size="mini">
       <el-form-item label="用户名">
-        <el-input v-model="formInline.user" placeholder="审批人"></el-input>
+        <el-input v-model="formInline.user" placeholder="审批人"  ></el-input>
       </el-form-item>
       <el-form-item label="用户活跃状态">
         <el-select v-model="formInline.region" placeholder="活跃状态">
@@ -20,24 +20,28 @@
       </el-form-item>
     </el-form>
     <blogtable :tableInfo="tableInfo"></blogtable>
-    <el-pagination background layout="prev, pager, next" :total="1000"></el-pagination>
   </div>
 </template>
 <script>
 import blogtable from "./blogtable";
 export default {
-  props:['tableInfo'],
+  props: ["tableInfo"],
   data: function() {
     return {
       formInline: {
         user: "",
         region: ""
-      },
-      
+      }
     };
   },
   components: {
     blogtable
+  },
+  created() {
+     
+  },
+  mounted() {
+    
   },
   methods: {
     onSubmit() {
@@ -48,4 +52,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.cardClass {
+  padding: 10px;
+}
 </style>

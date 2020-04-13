@@ -9,7 +9,7 @@
 </template>
 <script>
 export default {
-  props:['breadcrumb'],
+  props: ["breadcrumb"],
   data: function() {
     return {};
   },
@@ -19,7 +19,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.el-breadcrumb{
-  margin-bottom: 10px;
+.el-breadcrumb {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
 }
 </style>

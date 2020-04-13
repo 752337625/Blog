@@ -95,7 +95,7 @@ export default {
         float: right;
       }
       &:nth-last-child(3) {
-        border-right: 1px solid #2fb9d4;
+        border-right: 0;
         float: right;
       }
       &:last-child {
