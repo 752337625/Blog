@@ -32,9 +32,25 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.tableHigth{
+  i:first-child{
+      margin-left: 0px;
+  }
+  i{
+    margin: 0 10px;
+    font-size: 17px;
+    color: #409EFF;
+    &:hover{
+      background-color: #E7EAED;
+      cursor: pointer;
+    }
+  }
+  
+}
 .el-pagination {
   padding-top: 12px;
   padding-bottom: 10px;
   float: right;
+ 
 }
 </style>

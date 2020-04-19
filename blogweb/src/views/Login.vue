@@ -71,12 +71,12 @@ export default {
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate(async valid => {
-        // if (!valid) return false;
-        //  const { data: res } = await this.$http.post(
-        //    "/LoginData?rememberMe="+this.rememberMe,
-        //    this.$qs.stringify(this.userInfo)
-        //  );
-        // if (res.statue != 200) return this.$message.error(res.message);
+         if (!valid) return false;
+          const { data: res } = await this.$http.post(
+            "/loginServer?rememberMe="+this.rememberMe,
+            this.$qs.stringify(this.userInfo)
+          );
+        if (res.statue != 200) return this.$message.error(res.message);
         this.$router.push("/Home");
       });
     },

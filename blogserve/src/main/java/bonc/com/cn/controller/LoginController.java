@@ -28,23 +28,32 @@ public class LoginController {
 	
 	
 
-	@PostMapping("/Login")
+	@GetMapping("/Login")
 	@ResponseBody
-	public String LoginView() {
+	public Map<String, Object> loginView() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		Subject subject = SecurityUtils.getSubject();
+        map.put("message", "登出成功");
+		map.put("statue", 200);
+		map.put("success", true);
+		map.put("data", "登出成功");
+		System.out.println(subject.getSession());
+		System.out.println(subject.getSession().getHost());
+		System.out.println(subject.getSession().getId());
+		System.out.println(subject.getSession().getLastAccessTime());
+		System.out.println(subject.getSession().getAttributeKeys());
+        return map;
 		
-		
-		
-		return "1";
 	}
 
 	@ResponseBody
-	@PostMapping("/LoginData")
-	public Map<String, Object> UserLogin(User user,boolean rememberMe) {
+	@PostMapping("/loginServer")
+	public Map<String, Object> userLogin(User user) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		// 从SecurityUtils里边创建一个 subject
 		Subject subject = SecurityUtils.getSubject();
 		// 在认证提交前准备 token（令牌）
-		UsernamePasswordToken token = new UsernamePasswordToken(user.getUserName(),user.getPassword(),rememberMe);
+		UsernamePasswordToken token = new UsernamePasswordToken(user.getUserName(),user.getPassword());
 		try {
 			// 执行认证登陆
 			subject.login(token);
@@ -89,6 +98,7 @@ public class LoginController {
 		map.put("statue", 200);
 		map.put("success", true);
 		map.put("data", User);
+		map.put("token",subject.getSession().getId());
 		return map;
 	}
 	 /**
@@ -98,7 +108,7 @@ public class LoginController {
      * @return
      */
 	@ResponseBody
-	@GetMapping("/logout")
+	@GetMapping("/logoutServer")
     public Map<String, Object> logout() {
     	Map<String, Object> map = new HashMap<String, Object>();
         Subject subject = SecurityUtils.getSubject();

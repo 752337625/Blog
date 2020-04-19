@@ -7,6 +7,7 @@ import BlogOdometer from '../components/pc_components/pc_main_small_components/b
 import BlogUser from '../components/pc_components/pc_main_small_components/blogUser'
 import BlogUserAdd from '../components/pc_components/pc_main_small_components/blogUserAdd'
 import BlogLocationMap from '../components/pc_components/pc_main_small_components/blogLocationMap'
+import BlogMenuList from '../components/pc_components/pc_main_small_components/blogMenuList'
 
 
 
@@ -46,8 +47,10 @@ const routes = [{
                 path: '/locationMap',
                 component: BlogLocationMap
             },
-
-
+            {
+                path: '/mneuList',
+                component: BlogMenuList
+            },
         ]
     }
 ]

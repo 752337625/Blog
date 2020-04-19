@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import bonc.com.cn.dao.RegisterDao;
 import bonc.com.cn.entity.User;
 import bonc.com.cn.server.RegisterServer;
-import bonc.com.cn.util.PasswordHelper;
+import bonc.com.cn.util.MD5Util;
 
 @Service
 public class RegisterServerImpl implements RegisterServer {
@@ -21,7 +21,7 @@ public class RegisterServerImpl implements RegisterServer {
 	private RegisterDao registerDao;
 
 	@Autowired
-	private PasswordHelper passwordHelper;
+	private MD5Util MD5Util;
 
 	@Override
 	public Map<String, Object> registerServerMethod(User user, HttpServletRequest req) {
@@ -49,8 +49,7 @@ public class RegisterServerImpl implements RegisterServer {
 			map.put("message", "请接受《服务条款》和《隐私政策》");
 			map.put("success", false);
 		} else {
-			// user.setIP(getIp.getIpAddr(req));
-			user.setPassword(passwordHelper.encryptPassword(user));
+			user.setPassword(MD5Util.encryptPassword(user));
 			User save = registerDao.save(user);
 			map.put("statue", 200);
 			map.put("message", "保存成功");

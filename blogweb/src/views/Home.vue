@@ -31,7 +31,6 @@ export default {
   },
   mounted() {
     this.width=document.getElementsByClassName('el-main')[0].clientWidth-201+'px'
-    //console.log( this.$http.post("/Login"))
   },
   methods: {
     async logout() {

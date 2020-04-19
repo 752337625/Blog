@@ -47,6 +47,7 @@
 </template>
 
 <script>
+import AMap from "AMap"; // 引入高德地图
 export default {
   data: function() {
     return {
@@ -56,7 +57,7 @@ export default {
         telephone: "",
         email: "",
         IP: returnCitySN["cip"],
-        address: returnCitySN["cname"],
+        address:'',
         enabled: 1,
         locked: 1,
         clause: true
@@ -128,14 +129,16 @@ export default {
       }
     };
   },
-  mounted() {},
+  mounted() {
+    this.getLocation();
+  },
   methods: {
     submitForm(formName) {
       let _this = this;
       this.$refs[formName].validate(async valid => {
         if (!valid) return false;
         const { data: res } = await this.$http.post(
-          "/register",
+          "/registerServer",
           this.$qs.stringify(this.userInfo)
         );
         if (res.statue != 200) return this.$message.error(res.message);
@@ -149,7 +152,42 @@ export default {
           }
         });
       });
+    },
+    getLocation() {
+      var _this = this;
+      var map = new AMap.Map("container", {
+        resizeEnable: true
+      });
+      AMap.plugin("AMap.Geolocation", function() {
+        var geolocation = new AMap.Geolocation({
+          enableHighAccuracy: true, //是否使用高精度定位，默认:true
+          timeout: 60000 ,
+        });
+        map.addControl(geolocation);
+        geolocation.getCurrentPosition(function(status, result) {
+          if (status == "complete") {
+            _this.onComplete(result,_this);
+          } else {
+            _this.onError(result);
+          }
+        });
+      });
+    },
+    onComplete(data,_this) {
+      let lngat=(data.position.lng+','+data.position.lat).split(',')
+      var geocoder = new AMap.Geocoder({ city: "010", radius: 1000});
+      geocoder.getAddress(lngat, function(status, result) {
+        if (status === "complete" && result.regeocode) {
+          _this.userInfo.address=result.regeocode.formattedAddress;
+        } else {
+          _this.userInfo.address="根据经纬度查询地址失败"
+        }
+      });
+    },
+    onError(result) {
+      console.log(result);
     }
+    
   }
 };
 </script>
@@ -162,6 +200,7 @@ export default {
   .loginForm {
     min-width: 450px;
     background-color: rgba(255, 255, 255, 0.4);
+    position: absolute;
     //opacity: 0.5;
     transform: translate(
       -50%,

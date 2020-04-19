@@ -146,8 +146,14 @@ body,
     width: 100%;
     background-color: #fff;
 }
-.el-form-item--mini.el-form-item{
+
+.el-form-item--mini.el-form-item {
     margin-bottom: 10px;
+}
+
+.el-table td,
+.el-table th {
+    padding: 10px 0;
 }
 
 ::-webkit-scrollbar {

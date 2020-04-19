@@ -91,8 +91,8 @@ public class User implements Serializable{
 	/**
 	 * 个人描述
 	 */
-	@Column(columnDefinition = "varchar(500) COMMENT '个人描述'")
-	private String desc;
+	@Column(columnDefinition = "varchar(400) COMMENT '个人描述'")
+	private String description;
 	
 	/**
 	 * 盐值

@@ -38,12 +38,6 @@ export default {
           children: []
         },
         {
-          index: "/1",
-          text: "菜单管理",
-          icon: "el-icon-odometer",
-          children: []
-        },
-        {
           index: "/2",
           text: "广告管理",
           icon: "el-icon-odometer",
@@ -106,7 +100,19 @@ export default {
               icon: "el-icon-user-solid"
             }
           ]
-        }
+        },
+          {
+          index: "/menu",
+          text: "菜单管理",
+          icon: "el-icon-odometer",
+          children: [
+             {
+              index: "/mneuList",
+              text: "菜单列表",
+              icon: "el-icon-user-solid"
+            },
+          ]
+        },
       ]
     };
   },

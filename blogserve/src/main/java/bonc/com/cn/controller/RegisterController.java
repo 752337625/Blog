@@ -17,11 +17,10 @@ import bonc.com.cn.server.RegisterServer;
 @RequestMapping("/blog")
 public class RegisterController {
 	
-	
 	@Autowired
 	private RegisterServer registerServer;
 	
-	@PostMapping("/register")
+	@PostMapping("/registerServer")
 	@ResponseBody
 	public Map<String, Object> register(User user,HttpServletRequest req){
 		 Map<String, Object> registerServerMethod = registerServer.registerServerMethod(user,req);
