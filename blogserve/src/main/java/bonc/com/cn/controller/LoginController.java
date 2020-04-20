@@ -48,14 +48,11 @@ public class LoginController {
 
 	@ResponseBody
 	@PostMapping("/loginServer")
-	public Map<String, Object> userLogin(User user) {
+	public Map<String, Object> userLogin(User user,boolean rememberMe) {
 		Map<String, Object> map = new HashMap<String, Object>();
-		// 从SecurityUtils里边创建一个 subject
 		Subject subject = SecurityUtils.getSubject();
-		// 在认证提交前准备 token（令牌）
-		UsernamePasswordToken token = new UsernamePasswordToken(user.getUserName(),user.getPassword());
+		UsernamePasswordToken token = new UsernamePasswordToken(user.getUserName(),user.getPassword(),rememberMe);
 		try {
-			// 执行认证登陆
 			subject.login(token);
 		} catch (IncorrectCredentialsException e) {
 			map.put("message", "密码错误");

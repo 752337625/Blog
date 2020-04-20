@@ -2,6 +2,7 @@ import axios from 'axios'
 
 axios.defaults.baseURL = "http://localhost:8080/blog/"
 axios.defaults.withCredentials = true;
+axios.defaults.timeout = 5000;
     //axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
     //axios.defaults.headers.get['Content-Type'] = 'application/x-www-form-urlencoded';
 
