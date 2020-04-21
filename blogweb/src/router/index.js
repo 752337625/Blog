@@ -61,8 +61,8 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     if (to.path === '/Login') return next()
     if (to.path === '/Register') return next()
-    let tokenStr = 5
-    if (!tokenStr) return next('/Login')
+    let token = window.localStorage.getItem('token')
+    if (!token) return next('/Login')
     next()
 })
 

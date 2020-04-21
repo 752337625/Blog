@@ -32,7 +32,7 @@ public class ShiroConfig {
 		DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
 		shiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());
 		securityManager.setRealm(shiroRealm);
-	    //securityManager.setRememberMeManager(rememberMeManager());  
+	    securityManager.setRememberMeManager(rememberMeManager());  
 		return securityManager;
 	}
 	  
@@ -61,14 +61,14 @@ public class ShiroConfig {
 	  * rememberMeManager()方法是生成rememberMe管理器，而且要将这个rememberMe管理器设置到securityManager中  
 	  * @return  
 	 */  
-	/*
-	 * public CookieRememberMeManager rememberMeManager(){ CookieRememberMeManager
-	 * cookieRememberMeManager = new CookieRememberMeManager(); SimpleCookie
-	 * simpleCookie = new SimpleCookie("rememberMe");
-	 * simpleCookie.setMaxAge(259200);
-	 * cookieRememberMeManager.setCookie(simpleCookie);
-	 * cookieRememberMeManager.setCipherKey(Base64.decode("2AvVhdsgUs0FSA3SDFAdag=="
-	 * )); return cookieRememberMeManager; }
-	 */
+	
+	  public CookieRememberMeManager rememberMeManager(){ CookieRememberMeManager
+	  cookieRememberMeManager = new CookieRememberMeManager(); SimpleCookie
+	  simpleCookie = new SimpleCookie("rememberMe");
+	  simpleCookie.setMaxAge(60*60*24*7);
+	  cookieRememberMeManager.setCookie(simpleCookie);
+	  cookieRememberMeManager.setCipherKey(Base64.decode("2AvVhdsgUs0FSA3SDFAdag=="
+	  )); return cookieRememberMeManager; }
+	 
 
 }

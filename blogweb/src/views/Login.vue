@@ -34,12 +34,21 @@
 <script>
 import AMap from "AMap"; // 引入高德地图
 export default {
+  beforeCreate:function(){
+    document.cookie.split(';').forEach(function(item){
+      if(item.trim().indexOf("BLOGUSERNAME")>-1){
+         window.BLOGUSERNAME=item.trim().substring(13)
+      }else if(item.trim().indexOf("BLOGPASSWORD")>-1){
+         window.BLOGPASSWORD=item.trim().substring(13)
+      }
+    })
+  },
   data: function() {
     return {
        rememberMe:true,
-      userInfo: {
-        userName: "",
-        password: "",
+        userInfo: {
+        userName: window.BLOGUSERNAME||'',
+        password: window.BLOGPASSWORD||'',
         IP: returnCitySN["cip"],
         address:'',
       },
@@ -66,6 +75,9 @@ export default {
     };
   },
   mounted() {
+    if(this.userInfo.userName&&this.userInfo.password){
+      this.submitForm('ruleForm')
+    }
     this.getLocation();
   },
   methods: {
@@ -77,10 +89,18 @@ export default {
             this.$qs.stringify(this.userInfo)
           );
         if (res.statue != 200) return this.$message.error(res.message);
+        if(this.rememberMe){
+            this.RememberMe();
+        }
+        window.localStorage.setItem('token',res.token)
         this.$router.push("/Home");
       });
     },
-
+    RememberMe(){
+     var date=new Date(new Date().getTime()+1000*60*60*24*7)
+    document.cookie ='BLOGUSERNAME='+this.userInfo.userName+";expires="+date.toGMTString()+";path=/";
+    document.cookie ='BLOGPASSWORD='+this.userInfo.password+";expires="+date.toGMTString()+";path=/";
+    },
     getLocation() {
       var _this = this;
       var map = new AMap.Map("container", {
@@ -130,7 +150,10 @@ export default {
     min-width: 440px;
     background-color: rgba(255, 255, 255, 0.4);
     //opacity: 0.5;
-    transform: translate( -50%,-50% ); //CSS3 2D Transforms ie8一下不支持,9需要添加前缀
+    transform: translate(
+      -50%,
+      -50%
+    ); //CSS3 2D Transforms ie8一下不支持,9需要添加前缀
     top: 50%;
     left: 50%;
     text-align: center;
