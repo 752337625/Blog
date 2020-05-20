@@ -32,16 +32,10 @@ public class LoginController {
 	@ResponseBody
 	public Map<String, Object> loginView() {
 		Map<String, Object> map = new HashMap<String, Object>();
-		Subject subject = SecurityUtils.getSubject();
         map.put("message", "登出成功");
 		map.put("statue", 200);
 		map.put("success", true);
 		map.put("data", "登出成功");
-		System.out.println(subject.getSession());
-		System.out.println(subject.getSession().getHost());
-		System.out.println(subject.getSession().getId());
-		System.out.println(subject.getSession().getLastAccessTime());
-		System.out.println(subject.getSession().getAttributeKeys());
         return map;
 		
 	}

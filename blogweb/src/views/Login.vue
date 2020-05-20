@@ -76,7 +76,7 @@ export default {
   },
   mounted() {
     if(this.userInfo.userName&&this.userInfo.password){
-      this.submitForm('ruleForm')
+     // this.submitForm('ruleForm')
     }
     this.getLocation();
   },
@@ -84,9 +84,16 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(async valid => {
          if (!valid) return false;
-          const { data: res } = await this.$http.post(
+          const { data: res } = await this.$http.post( 
             "/loginServer?rememberMe="+this.rememberMe,
-            this.$qs.stringify(this.userInfo)
+            this.$qs.stringify(this.userInfo),
+            {
+              onDownloadProgress:function (progressEvent) {
+                  // 对原生进度事件的处理
+                  console.log(progressEvent)
+                  console.log('已经加载：' + (progressEvent.loaded / progressEvent.total) * 100 +'%');
+              },
+            }
           );
         if (res.statue != 200) return this.$message.error(res.message);
         if(this.rememberMe){
@@ -98,8 +105,8 @@ export default {
     },
     RememberMe(){
      var date=new Date(new Date().getTime()+1000*60*60*24*7)
-    document.cookie ='BLOGUSERNAME='+this.userInfo.userName+";expires="+date.toGMTString()+";path=/";
-    document.cookie ='BLOGPASSWORD='+this.userInfo.password+";expires="+date.toGMTString()+";path=/";
+      document.cookie ='BLOGUSERNAME='+this.userInfo.userName+";expires="+date.toGMTString()+";path=";
+      document.cookie ='BLOGPASSWORD='+this.userInfo.password+";expires="+date.toGMTString()+";path=";
     },
     getLocation() {
       var _this = this;

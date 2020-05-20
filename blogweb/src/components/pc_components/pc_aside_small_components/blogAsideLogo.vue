@@ -3,18 +3,18 @@
 
 
 
-    
+
   </div>
 </template>
 
 <script>
-export default {
-  data: function() {
-    return {};
-  },
-  components: {},
-  methods: {}
-};
+  export default {
+    data: function() {
+      return {};
+    },
+    components: {},
+    methods: {}
+  };
 </script>
 
 <style lang="less" scoped>
