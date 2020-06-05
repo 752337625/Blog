@@ -1,17 +1,10 @@
 <template>
-	<div id="app">
-		<Login></Login>
-		<Home></Home>
+	<div id="header">
+		
 	</div>
 </template>
 <script>
-	import Login from './views/login'
-	import Home from './views/home'
 	export default {
-		components: {
-			Login,
-			Home
-		},
 		data( ) {
 			return {}
 		},
