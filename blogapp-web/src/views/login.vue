@@ -1,20 +1,20 @@
 <template>
 	<div id="login">
-		<div class="login_header">{{$store.state.loginHeader}}</div>
-		<div class="login_content">{{$store.state.loginContent}}</div>
-		<div class="login_foot">{{$store.state.loginFoot}}</div>
+		<div class="login-header">{{$store.state.loginHeader}}</div>
+		<div class="login-content">{{$store.state.loginContent}}</div>
+		<div class="login-foot">{{$store.state.loginFoot}}</div>
 		<br />
-		<div class="login_header">{{loginHeader}}</div>
-		<div class="login_content">{{loginContent}}</div>
-		<div class="login_foot">{{loginFoot}}</div>
+		<div class="login-header">{{loginHeader}}</div>
+		<div class="login-content">{{loginContent}}</div>
+		<div class="login-foot">{{loginFoot}}</div>
 		<br />
-		<div class="login_header">{{todos}}</div>
-		<div class="login_content"></div>
-		<div class="login_foot"></div>
+		<div class="login-header">{{todos}}</div>
+		<div class="login-content"></div>
+		<div class="login-foot"></div>
 		<br />
-		<div class="login_header">{{count}}</div>
-		<div class="login_content"></div>
-		<div class="login_foot"></div>
+		<div class="login-header">{{count}}</div>
+		<div class="login-content"></div>
+		<div class="login-foot"></div>
 		<van-button type="primary" @touchstart="increment">主要按钮</van-button>
 	</div>
 </template>

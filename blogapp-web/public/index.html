@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0" user-scalable=no>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<meta name="description" content="我的移动端博客">
 		<meta name="keywords" content="博客">
 		<meta name="author" content="王宏伟, wyw520byl@163.com">
@@ -22,12 +22,13 @@
 				continue.</strong>
 		</noscript>
 		<div id="app"></div>
-		<!-- built files will be auto injected -->
 	</body>
 	<script type="application/javascript">
-		var styleNode = document.createElement("style");
-		var w = (document.documentElement.clientWidth||document.body.clientWidth||window.innerWidth)/20;
-		styleNode.innerHTML="html{font-size:"+w+"px!important}";
-		document.head.appendChild(styleNode); 
+		var html = document.querySelector('html');
+		var htmlWidth = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
+		if (htmlWidth > 750) htmlWidth = 750;
+		var w = htmlWidth / 20;
+		html.style.fontSize = w + 'px'
+		//window.addEventListener('resize',resizeWidth,false)
 	</script>
 </html>

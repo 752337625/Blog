@@ -1,0 +1,185 @@
+@charset "utf-8";
+
+* {
+	box-sizing: border-box;
+}
+
+/** 全局reset **/
+body,
+header,
+footer,
+section,
+div,
+span,
+p,
+img,
+a,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+i,
+b,
+u,
+del,
+menu,
+nav,
+fieldset,
+legend,
+article,
+aside,
+details,
+figcaption,
+hgroup,
+pre,
+code,
+from,
+blockquote,
+th,
+td,
+tr,
+hr,
+table,
+img,
+figure,
+button,
+input,
+textarea {
+	padding: 0;
+	margin: 0;
+	/*禁止复制、选中文本*/
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	/*禁止iPhone和Android横屏或竖屏模式下字体自动缩放*/
+	-webkit-touch-callout: none;
+	-webkit-text-size-adjust: none;
+	/*ios和android下点击元素时出现灰色阴影背景*/
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	font-family: Microsoft Yahei, Helvetica, Arial;
+}
+
+/* 空出iPhone X安全区 */
+body {
+	padding-bottom: constant(safe-area-inset-bottom);
+	padding-bottom: env(safe-area-inset-bottom);
+	padding-top: constant(safe-area-inset-top);
+	padding-top: env(safe-area-inset-top);
+	padding-left: constant(safe-area-inset-left);
+	padding-left: env(safe-area-inset-left);
+	padding-right: constant(safe-area-inset-right);
+	padding-right: env(safe-area-inset-right);
+}
+
+@viewport {
+	viewport-fit: cover;
+}
+
+@media (shape: round) {
+	/* styles for the round design */
+}
+
+@media (shape: rect) {
+	/* styles for the rectangular design */
+}
+
+body {
+	background-color: #fff;
+}
+
+/* webkit引擎的浏览器取消默认样式(-webkit-appearance) */
+input,
+textarea {
+	-webkit-user-select: auto !important;
+	user-select: auto !important;
+	/*-webkit-appearance:none;*/
+}
+
+
+img {
+	vertical-align: middle;
+	border: 0 none;
+}
+
+ul {
+	list-style: none;
+}
+
+b {
+	font-weight: normal;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+section {
+	display: block;
+	margin: 0 auto;
+}
+
+header,
+footer {
+	margin: 0 auto;
+	width: 100%;
+}
+
+em,
+i {
+	font-style: normal;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	min-height: 100%;
+}
+
+button,
+input {
+	border: 0 none;
+}
+
+u,
+del {
+	text-decoration: none;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="password"],
+input[type="text"],
+input[type="search"],
+input[type="number"],
+button {
+	-webkit-appearance: none;
+	outline: none;
+}
+
+/* webkit引擎的浏览器取消默认样式 */
+:focus {
+	outline: 0;
+}
+
+/*横向或纵向滑动速度慢或者卡:只需要对滚动元素置*/
+.overflowScrolling {
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: touch;
+}

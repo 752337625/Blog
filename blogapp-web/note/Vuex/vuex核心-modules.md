@@ -22,3 +22,7 @@ const store = new Vuex.Store({
   }
 })
 ~~~
+###注意
+~~~
+new Vuex.Store将modules中的核心，分别挂载到仓库store的state对象，getters，mutations，actions，中
+~~~

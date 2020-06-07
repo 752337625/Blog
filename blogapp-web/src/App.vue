@@ -1,27 +1,16 @@
 <template>
-	<div id="app">
-		<Login></Login>
-		<Home></Home>
+	<div id="app" class="page-container">
+		<router-view></router-view>
 	</div>
 </template>
 <script>
-	import Login from './views/login'
-	import Home from './views/home'
-	export default {
-		components: {
-			Login,
-			Home
-		},
-		data( ) {
-			return {}
-		},
-		methods: {
-			increment( ) {
-				this.$store.commit( 'increment' )
-				console.log( this.$store.state.count )
-			}
-		},
-	};
+	export default {};
 </script>
 <style lang="less">
+	.page-container {
+		padding-top: 2.3125rem;
+		padding-bottom: 2.6875rem;
+		height: 100%;
+		background-color: pink;
+	}
 </style>

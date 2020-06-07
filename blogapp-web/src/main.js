@@ -5,6 +5,8 @@ import store from './store'
 //全局样式
 import './assets/css/global.css'
 import './plugins/vant.js'
+process.env.NODE_ENV=='development'?window.store=store:''
+process.env.NODE_ENV=='development'?window.router=router:''
 Vue.config.productionTip = false
 new Vue( {
 	router,

@@ -10,10 +10,13 @@ import BlogUserAdd from '../components/pc_components/pc_main_small_components/bl
 import BlogLocationMap from '../components/pc_components/pc_main_small_components/blogLocationMap'
 import BlogMenuList from '../components/pc_components/pc_main_small_components/blogMenuList'
 import BlogDplayer from '../components/pc_components/pc_main_small_components/blogDplayer.vue'
-Vue.use( VueRouter )
-const routes = [ {
+Vue.use(VueRouter)
+const routes = [{
   path: "*",
-  redirect: "Home"
+  redirect: "Home"，,
+  beforeEnter: (to, from, next) => {
+    // ...
+  }
 }, {
   path: "/",
   redirect: "Login",
@@ -42,7 +45,7 @@ const routes = [ {
   path: "/Home",
   component: Home,
   redirect: '/odometer',
-  children: [ {
+  children: [{
     path: '/odometer',
     component: BlogOdometer,
     meta: {
@@ -78,16 +81,23 @@ const routes = [ {
     meta: {
       keepAlive: true
     }
-  } ]
-} ]
-const router = new VueRouter( {
+  }]
+}]
+const router = new VueRouter({
   routes
-} )
-router.beforeEach( ( to, from, next ) => {
-  if ( to.path === '/Login' ) return next( )
-  if ( to.path === '/Register' ) return next( )
-  let token = window.localStorage.getItem( 'token' )
-  if ( !token ) return next( '/Login' )
-  next( )
-} )
+})
+router.beforeEach((to, from, next) => {
+  if (to.path === '/Login') return next()
+  if (to.path === '/Register') return next()
+  let token = window.localStorage.getItem('token')
+  if (!token) return next('/Login')
+  next()
+})
+router.beforeResolve((to, from, next) => {
+  // ...
+})
+router.afterEach((to, from) => {
+  // ...
+})
+
 export default router

@@ -1,18 +1,15 @@
 <template>
-	<div id="header">
-		
-	</div>
+	<header id="page-header">
+		555
+	</header>
 </template>
 <script>
 	export default {
-		data( ) {
+		data() {
 			return {}
 		},
 		methods: {
-			increment( ) {
-				this.$store.commit( 'increment' )
-				console.log( this.$store.state.count )
-			}
+
 		},
 	};
 </script>
