@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 //全局样式
 import './assets/css/global.css'
+import './assets/fonts/iconfont.css'
 import './plugins/vant.js'
 process.env.NODE_ENV=='development'?window.store=store:''
 process.env.NODE_ENV=='development'?window.router=router:''

@@ -9,8 +9,6 @@
 }
 
 html {
-	-webkit-text-size-adjust: none;
-	/*禁止iPhone和Android横屏或竖屏模式下字体自动缩放*/
 	-webkit-font-smoothing: antialiased;
 	/*页面上的字体抗锯齿,使用后字体看起来会更清晰舒服*/
 }
@@ -29,12 +27,6 @@ ul {
 b {
 	font-weight: normal;
 }
-
-a {
-	text-decoration: none;
-	color: inherit;
-}
-
 em,
 i {
 	font-style: normal;

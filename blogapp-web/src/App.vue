@@ -11,6 +11,5 @@
 		padding-top: 2.3125rem;
 		padding-bottom: 2.6875rem;
 		height: 100%;
-		background-color: pink;
 	}
 </style>
