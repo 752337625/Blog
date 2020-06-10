@@ -3,12 +3,16 @@
 		<Header>
 			<template v-slot:search>
 				<div class="header-bd">
-					<a class="placeholder"><span class="text iconfont iconsearch">寻找宝贝店铺</span></a>
+					<router-link :to="{ name: 'Tbs'}" class="placeholder"><span class="text iconfont iconsearch">寻找宝贝店铺</span></router-link>
 				</div>
 			</template>
 		</Header>
 		<Section></Section>
-		<Footer></Footer>
+		<Footer>
+			
+			
+			
+		</Footer>
 	</div>
 </template>
 <script>
@@ -28,11 +32,10 @@
 		}
 	}
 </script>
-<style lang="less">
+<style lang="less" scoped="scoped">
 	.tb_1 {
 		height: 100%;
 		width: 100%;
 		background-color: burlywood;
 	}
-	
 </style>

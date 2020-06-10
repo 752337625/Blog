@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Tbm from '../views/Tbm'
+import Tbs from '../views/Tbs'
 Vue.use( VueRouter )
 const routes = [ {
 	path: "/",
@@ -10,7 +11,12 @@ const routes = [ {
 	}
 },{
 	path:'/Tbm',
+	name:'Tbm',
 	component:Tbm
+},{
+	path:'/Tbs',
+	name:'Tbs',
+	component:Tbs
 }]
 const router = new VueRouter( {
 	mode: 'history',

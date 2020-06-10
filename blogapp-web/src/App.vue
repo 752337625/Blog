@@ -6,10 +6,5 @@
 <script>
 	export default {};
 </script>
-<style lang="less">
-	.page-container {
-		padding-top: 2.3125rem;
-		padding-bottom: 2.6875rem;
-		height: 100%;
-	}
+<style lang="less" scoped="scoped">
 </style>
