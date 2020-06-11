@@ -7,10 +7,15 @@
 		<meta name="description" content="我的移动端博客">
 		<meta name="keywords" content="博客">
 		<meta name="author" content="王宏伟, wyw520byl@163.com">
-		<!-- 关闭邮箱地址识别： -->
-		<meta name="format-detection" content="email=no" />
-		<!-- 关闭电话号码识别： -->
-		<meta name="format-detection" content="telephone=no" />
+		<!-- 关闭电话号码/邮箱地址识别： -->
+		<meta name="format-detection" content="telephone=no,email=no" />
+		<!-- 就是当点击网页添加至主屏幕功能时，会在主屏幕上生成一个图标。
+		点击该图标会进入webapp功能。就是模拟本地应用的模式来浏览web页面。 -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- 当启动webapp功能时，显示手机信号、时间、电池的顶部导航栏的颜色。默认值为default（白色），可以定为black（黑色）和black-translucent（灰色半透明）。这个主要是根据实际的页面设计的主体色为搭配来进行设置。 -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!-- 添加到主屏幕后，app全屏显示 -->
+		<meta content="yes" name="apple-touch-fullscreen" />
 		<title>
 			<%= htmlWebpackPlugin.options.title %>
 		</title>
