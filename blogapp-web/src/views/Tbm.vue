@@ -8,11 +8,7 @@
 			</template>
 		</Header>
 		<Section></Section>
-		<Footer>
-			
-			
-			
-		</Footer>
+		<Footer></Footer>
 	</div>
 </template>
 <script>
