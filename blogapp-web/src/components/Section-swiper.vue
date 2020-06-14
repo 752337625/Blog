@@ -1,47 +1,96 @@
 <template>
 	<div class="page-swiper">
 		<template>
-			<swiper :options="swiperOption" ref="mySwiper" >
-				<swiper-slide>I'm Slide 1</swiper-slide>
-				<swiper-slide>I'm Slide 2</swiper-slide>
-				<swiper-slide>I'm Slide 3</swiper-slide>
-				<swiper-slide>I'm Slide 4</swiper-slide>
-				<swiper-slide>I'm Slide 5</swiper-slide>
-				<swiper-slide>I'm Slide 6</swiper-slide>
-				<swiper-slide>I'm Slide 7</swiper-slide>
+			<swiper :options="swiperOption" ref="mySwiper">
+				<swiper-slide>
+					<router-link :to="{ name: 'Tbs'}" class="swiper-a"><img src="../assets/img/1.jpg"></router-link>
+				</swiper-slide>
+				<swiper-slide>
+					<router-link :to="{ name: 'Tbs'}" class="swiper-a"><img src="../assets/img/2.jpg"></router-link>
+				</swiper-slide>
+				<swiper-slide>
+					<router-link :to="{ name: 'Tbs'}" class="swiper-a"><img src="../assets/img/3.jpg"></router-link>
+				</swiper-slide>
+				<swiper-slide>
+					<router-link :to="{ name: 'Tbs'}" class="swiper-a"><img src="../assets/img/4.jpg"></router-link>
+				</swiper-slide>
+				<swiper-slide>
+					<router-link :to="{ name: 'Tbs'}" class="swiper-a"><img src="../assets/img/5.jpg"></router-link>
+				</swiper-slide>
+				<swiper-slide>
+					<router-link :to="{ name: 'Tbs'}" class="swiper-a"><img src="../assets/img/6.jpg"></router-link>
+				</swiper-slide>
+				<swiper-slide>
+					<router-link :to="{ name: 'Tbs'}" class="swiper-a"><img src="../assets/img/7.jpg"></router-link>
+				</swiper-slide>
+				<swiper-slide>
+					<router-link :to="{ name: 'Tbs'}" class="swiper-a"><img src="../assets/img/8.jpg"></router-link>
+				</swiper-slide>
+				<div class="swiper-pagination" slot="pagination"></div>
 			</swiper>
 		</template>
+		<!-- <div class="kGYGSu"></div> -->
 	</div>
 </template>
 <script>
 	import {
-		swiper,
-		swiperSlide
+		Swiper,
+		SwiperSlide,
 	} from 'vue-awesome-swiper'
-	import 'swiper/dist/css/swiper.css'
+	import 'swiper/css/swiper.css'
 	export default {
 		components: {
-			swiper,
-			swiperSlide,
+			Swiper,
+			SwiperSlide
 		},
-		data( ) {
+		data() {
 			return {
 				swiperOption: {
+					pagination: {
+						el: '.swiper-pagination',
+						clickable: true,
+						bulletClass: 'my-bullet', //需设置.my-bullet样式
+						bulletActiveClass: 'my-bullet-active',
+					},
+					loop: true, //开启轮播图前后循环模式
+					autoplay: true,
+
 				}
 			}
 		},
-		computed: {
-			swiper( ) {
-				return this.$refs.mySwiper.swiper
-			}
-		},
-		mounted( ) {
-			// current swiper instance
-			// 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
-			console.log( 'this is current swiper instance object', this.swiper )
-			this.swiper.slideTo( 3, 1000, false )
-		}
+		mounted() {}
 	}
 </script>
-<style lang="less">
+<style lang="less" scoped="scoped">
+	.page-swiper {
+		height: 6.375rem;
+
+		.swiper-a {
+			height: 100%;
+			width: 100%;
+			display: inline-block;
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+
+		}
+
+		.my-bullet {
+			display: inline-block;
+			height: 0.5rem;
+			width: 0.5rem;
+			border-radius: 100%;
+			background-color: rgb(255, 255, 255);
+			margin: 0.625rem 0.125rem;
+			opacity: 0.3;
+			transition-duration: 300ms;
+		}
+
+		.my-bullet-active {
+			background: #ff6600;
+			opacity: 1;
+		}
+	}
 </style>
