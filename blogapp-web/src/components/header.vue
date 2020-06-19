@@ -11,7 +11,7 @@
 		methods: {},
 	};
 </script>
-<style lang="less"  scoped="scoped">
+<style lang="less" scoped="scoped">
 	#page-header {
 		position: fixed;
 		top: 0;
@@ -19,6 +19,5 @@
 		right: 0;
 		z-index: 1000;
 		background-color: rgb(255, 133, 42);
-
 	}
 </style>

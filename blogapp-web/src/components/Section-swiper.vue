@@ -29,7 +29,6 @@
 				<div class="swiper-pagination" slot="pagination"></div>
 			</swiper>
 		</template>
-		<!-- <div class="kGYGSu"></div> -->
 	</div>
 </template>
 <script>
@@ -75,22 +74,6 @@
 				height: 100%;
 			}
 
-		}
-
-		.my-bullet {
-			display: inline-block;
-			height: 0.5rem;
-			width: 0.5rem;
-			border-radius: 100%;
-			background-color: rgb(255, 255, 255);
-			margin: 0.625rem 0.125rem;
-			opacity: 0.3;
-			transition-duration: 300ms;
-		}
-
-		.my-bullet-active {
-			background: #ff6600;
-			opacity: 1;
 		}
 	}
 </style>

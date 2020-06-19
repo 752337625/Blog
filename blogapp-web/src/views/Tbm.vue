@@ -3,7 +3,9 @@
 		<Header>
 			<template v-slot:search>
 				<div class="header-bd">
-					<router-link :to="{ name: 'Tbs'}" class="placeholder"><span class="text iconfont iconsearch">寻找宝贝店铺</span></router-link>
+					<router-link :to="{ name: 'Tbs'}" class="placeholder">
+						<span class="text iconfont iconsearch">寻找宝贝店铺</span>
+					</router-link>
 				</div>
 			</template>
 		</Header>
