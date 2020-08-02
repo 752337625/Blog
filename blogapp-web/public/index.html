@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+		<meta name="description" content="我的移动端博客">
+		<meta name="keywords" content="博客">
+		<meta name="author" content="王宏伟, wyw520byl@163.com">
+		<!-- 关闭电话号码/邮箱地址识别： -->
+		<meta name="format-detection" content="telephone=no,email=no" />
+		<!-- 就是当点击网页添加至主屏幕功能时，会在主屏幕上生成一个图标。
+		点击该图标会进入webapp功能。就是模拟本地应用的模式来浏览web页面。 -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- 当启动webapp功能时，显示手机信号、时间、电池的顶部导航栏的颜色。默认值为default（白色），可以定为black（黑色）和black-translucent（灰色半透明）。这个主要是根据实际的页面设计的主体色为搭配来进行设置。 -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!-- 添加到主屏幕后，app全屏显示 -->
+		<meta content="yes" name="apple-touch-fullscreen" />
+		<title>
+			<%= htmlWebpackPlugin.options.title %>
+		</title>
+	</head>
+	<body>
+		<noscript>
+			<strong>We're sorry but
+				<%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to
+				continue.</strong>
+		</noscript>
+		<div id="app"></div>
+	</body>
+	<script type="application/javascript">
+	/* 	!function(e,t){var n=t.documentElement,d=e.devicePixelRatio||1;function i(){var e=n.clientWidth/20;n.style.fontSize=e+"px"}if(function e(){t.body?t.body.style.fontSize="16px":t.addEventListener("DOMContentLoaded",e)}(),i(),e.addEventListener("resize",i),e.addEventListener("pageshow",function(e){e.persisted&&i()}),2<=d){var o=t.createElement("body"),a=t.createElement("div");a.style.border=".5px solid transparent",o.appendChild(a),n.appendChild(o),1===a.offsetHeight&&n.classList.add("hairlines"),n.removeChild(o)}}(window,document) */
+	</script>
+</html>
