@@ -1,6 +1,8 @@
 package bonc.com.cn.server;
 
 
+import java.util.List;
+
 import bonc.com.cn.entity.Menu;
 
 public interface MenuServer {
@@ -12,5 +14,11 @@ public interface MenuServer {
 	 * @return
 	 */
 	Menu menuServerMethod(Menu menu);
+	/**
+	 * 查询菜单
+	 * @return
+	 */
+	List<Menu> menuListMethod();
+	
 
 }

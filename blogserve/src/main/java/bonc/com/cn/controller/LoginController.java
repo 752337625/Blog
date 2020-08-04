@@ -3,7 +3,6 @@ package bonc.com.cn.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.shiro.SecurityUtils;
@@ -55,6 +54,12 @@ public class LoginController {
 		UsernamePasswordToken token = new UsernamePasswordToken(user.getUserName(),user.getPassword(),rememberMe);
 		try {
 			subject.login(token);
+			User User= (User) subject.getPrincipal();
+			map.put("message", "登录成功");
+			map.put("statue", 200);
+			map.put("success", true);
+			map.put("data", User);
+			map.put("token",subject.getSession().getId());
 		} catch (IncorrectCredentialsException e) {
 			map.put("message", "密码错误");
 			map.put("statue", 400);
@@ -91,12 +96,7 @@ public class LoginController {
 			map.put("statue", 400);
 			map.put("success", false);
 		}
-		User User= (User) subject.getPrincipal();
-		map.put("message", "登录成功");
-		map.put("statue", 200);
-		map.put("success", true);
-		map.put("data", User);
-		map.put("token",subject.getSession().getId());
+		
 		return map;
 	}
 	 /**

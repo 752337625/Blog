@@ -82,6 +82,12 @@ public class User implements Serializable{
 	 */
 	@Column(columnDefinition = "varchar(100) COMMENT '初次登陆地址'")
 	private String address;
+	
+	/**
+	 * 头像
+	 */
+	@Column(columnDefinition = "varchar(100) COMMENT '头像'")
+	private String imgURL;
 	/**
 	 * 注册IP
 	 */
