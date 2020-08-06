@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,7 +40,6 @@ public class MenuServerImpl implements MenuServer {
 	 * 
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<Menu> menuListMethod() {
 		List<Menu> findByMenuIsParent = menuDao.findByMenuIsParent(1);
